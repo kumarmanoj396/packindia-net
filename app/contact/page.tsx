@@ -4,23 +4,17 @@ import ContactCta from "../../components/ContactCta";
 export default function Contact(){
   return <main>
     <section className="page-hero contact-hero"><div className="container"><div className="breadcrumbs">Home → Contact Us</div><h1>CONTACT US</h1><p>We are here to help you. Get in touch with Pack India for your packaging requirements.</p></div></section>
-
     <section className="section"><div className="container contact-grid contact-enhanced">
-      <div className="contact-left">
-        <span className="eyebrow">LET'S CONNECT</span><h2>GET IN TOUCH</h2>
-        <p className="contact-intro">Tell us what you need and our team will help you find the right packaging solution for your business.</p>
-        <div className="contact-info">
-          <div className="contact-item"><MapPin/><div><b>ADDRESS</b><span>Industrial Area, Bangalore – 560099, Karnataka, India</span></div></div>
-          <div className="contact-item"><Phone/><div><b>PHONE</b><span>+91 98765 43210</span></div></div>
-          <div className="contact-item"><Mail/><div><b>EMAIL</b><span>info@packindia.net</span></div></div>
-          <div className="contact-item"><Clock3/><div><b>BUSINESS HOURS</b><span>Mon - Sat: 9:00 AM - 6:00 PM<br/>Sunday: Closed</span></div></div>
-        </div>
-        <a className="whatsapp-contact" href="https://wa.me/919876543210" target="_blank" rel="noreferrer"><MessageCircle/> WhatsApp Us <ArrowRight/></a>
-      </div>
+      <div className="contact-left"><span className="eyebrow">LET'S CONNECT</span><h2>GET IN TOUCH</h2><p className="contact-intro">Tell us what you need and our team will help you find the right packaging solution for your business.</p><div className="contact-info">
+        <div className="contact-item"><MapPin/><div><b>ADDRESS</b><span>Industrial Area, Bangalore – 560099, Karnataka, India</span></div></div>
+        <div className="contact-item"><Phone/><div><b>PHONE</b><span>+91 98765 43210</span></div></div>
+        <div className="contact-item"><Mail/><div><b>EMAIL</b><span>info@packindia.net</span></div></div>
+        <div className="contact-item"><Clock3/><div><b>BUSINESS HOURS</b><span>Mon - Sat: 9:00 AM - 6:00 PM<br/>Sunday: Closed</span></div></div>
+      </div><a className="whatsapp-contact" href="https://wa.me/919876543210" target="_blank" rel="noreferrer"><MessageCircle/> WhatsApp Us <ArrowRight/></a></div>
       <form className="form contact-form"><div className="form-heading"><span>QUICK ENQUIRY</span><h3>SEND US A MESSAGE</h3><p>Share your requirement and we'll get back to you.</p></div><input placeholder="Your Name"/><input placeholder="Your Email" type="email"/><input placeholder="Your Phone"/><input placeholder="Subject"/><textarea placeholder="Your Message"/><button className="btn btn-orange" type="button">SEND MESSAGE <ArrowRight size={15}/></button></form>
     </div></section>
-
     <section className="section map-section" style={{paddingTop:0}}><div className="container"><div className="map-card"><div><span className="eyebrow">FIND US</span><h2>OUR LOCATION</h2><p>Visit us or contact our team to discuss your packaging needs.</p><a className="btn btn-orange" href="https://www.google.com/maps/search/?api=1&query=Industrial+Area+Bangalore+560099" target="_blank" rel="noreferrer">OPEN IN GOOGLE MAPS <ArrowRight size={15}/></a></div><div className="map-placeholder"><MapPin size={42}/><b>PACK INDIA</b><span>Industrial Area, Bangalore</span></div></div></div></section>
     <ContactCta/>
+    <style jsx>{` .contact-enhanced{align-items:start}.contact-left{padding:8px 0}.contact-left h2{font-size:32px;color:#092a4c;margin:8px 0 12px}.contact-intro{color:#687786;font-size:13px;line-height:1.8;max-width:470px}.contact-info{margin-top:26px}.whatsapp-contact{display:inline-flex;align-items:center;gap:8px;margin-top:25px;background:#148f55;color:#fff;padding:12px 17px;font-size:11px;font-weight:800}.whatsapp-contact svg:last-child{margin-left:4px}.contact-form{background:#f7f9fa;padding:26px;border:1px solid #e5e9ed;box-shadow:0 12px 30px rgba(8,42,70,.06)}.form-heading{grid-column:1/-1}.form-heading span{font-size:10px;font-weight:800;color:#f36b21;letter-spacing:1.2px}.form-heading h3{font-size:22px;color:#092a4c;margin:6px 0}.form-heading p{font-size:11px;color:#687786;margin:0 0 7px}.contact-form input,.contact-form textarea{background:#fff}.map-card{display:grid;grid-template-columns:1fr 1.25fr;gap:28px;background:#062b50;color:#fff;padding:28px;align-items:stretch}.map-card h2{font-size:26px;margin:7px 0 10px}.map-card p{color:#cbd8e4;font-size:12px;line-height:1.7;max-width:430px}.map-placeholder{min-height:230px;background:linear-gradient(135deg,#e5ecef,#b8c9cf);color:#092a4c;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}.map-placeholder svg{color:#f36b21}.map-placeholder b{font-size:16px}.map-placeholder span{font-size:11px}@media(max-width:700px){.map-card{grid-template-columns:1fr}.contact-form{padding:18px}} `}</style>
   </main>
 }
