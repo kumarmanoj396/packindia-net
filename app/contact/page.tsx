@@ -1,3 +1,5 @@
+"use client";
+
 import { Mail, MapPin, Phone, Clock3, MessageCircle, ArrowRight } from "lucide-react";
 import ContactCta from "../../components/ContactCta";
 
