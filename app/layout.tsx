@@ -1,5 +1,6 @@
 import "./globals.css";
 import "./responsive.css";
+import "./mobile-polish.css";
 import type { Metadata } from "next";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
