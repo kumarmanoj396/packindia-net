@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function ContactCta(){return <section className="contact-cta"><div className="container contact-cta-inner"><div><span className="eyebrow">GET IN TOUCH</span><h2>Need the right packaging solution?</h2><p>Tell us what you need and our team will help you choose the right product.</p></div><Link href="/contact" className="btn btn-orange">SEND ENQUIRY →</Link></div></section>}
