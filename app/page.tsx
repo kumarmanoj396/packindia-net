@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ShieldCheck, Clock3, HeartHandshake } from "lucide-react";
+import { ArrowRight, ShieldCheck, Clock3, HeartHandshake, CheckCircle2 } from "lucide-react";
 import SectionTitle from "../components/SectionTitle";
 import ProductCard from "../components/ProductCard";
 import LeadStrip from "../components/LeadStrip";
@@ -30,8 +30,28 @@ export default function Home(){
       <div className="container"><SectionTitle eyebrow="PACKAGING PRODUCTS" title={<>OUR <span className="orange">PRODUCTS</span></>} text="We offer a wide range of packaging products that ensure protection, durability and cost-efficiency for your business."/><div className="products-grid">{products.map(p=><ProductCard key={p.slug} product={p}/>)}</div></div>
     </section>
 
+    <section className="section about-home" id="about-home">
+      <div className="container about-home-grid">
+        <div className="about-visual">
+          <div className="about-building"><span>PACK INDIA</span><small>PACKAGING SOLUTIONS</small><div className="building-windows"/></div>
+          <div className="about-badge"><b>10+</b><span>YEARS OF<br/>EXPERIENCE</span></div>
+        </div>
+        <div className="about-copy">
+          <span className="eyebrow">WHO WE ARE</span>
+          <h2>PACKAGING PARTNER FOR <span className="orange">YOUR BUSINESS</span></h2>
+          <p>Pack India is focused on dependable packaging products and practical solutions that help businesses protect, store and move their products with confidence.</p>
+          <div className="about-checks">
+            <div><CheckCircle2/><span>High quality raw materials</span></div>
+            <div><CheckCircle2/><span>Advanced manufacturing and sourcing</span></div>
+            <div><CheckCircle2/><span>Timely delivery</span></div>
+            <div><CheckCircle2/><span>Customer-first approach</span></div>
+          </div>
+          <Link href="/about" className="text-link">MORE ABOUT US <ArrowRight size={14}/></Link>
+        </div>
+      </div>
+    </section>
+
     <LeadStrip/>
-    <section className="section why"><div className="container why-grid"><div><SectionTitle eyebrow="WHY PACK INDIA" title={<>PACKAGING YOU CAN <span className="orange">TRUST</span></>} text="We focus on dependable products, practical solutions and service that helps businesses package, protect and move their products confidently."/><div className="checks"><div><span>✓</span> High quality raw materials</div><div><span>✓</span> Advanced manufacturing and sourcing</div><div><span>✓</span> Timely delivery</div><div><span>✓</span> Customer-first approach</div></div></div><div className="warehouse"><div className="warehouse-building"><span>PACK INDIA</span><small>PACKAGING SOLUTIONS</small></div></div></div></section>
     <section className="section" id="gallery"><div className="container"><SectionTitle eyebrow="OUR WORK" title={<>PACKAGING <span className="orange">IN FOCUS</span></>}/><div className="gallery-grid">{["Boxes","Tapes","Bubble Wrap","Stretch Film","Pouches","Sheets","Warehouse","Dispatch"].map((name,i)=><div className={`gallery-item gallery-${i+1}`} key={name}><span>{name}</span></div>)}</div></div></section>
     <ContactCta/>
   </main>
