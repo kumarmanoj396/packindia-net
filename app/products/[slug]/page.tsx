@@ -1,0 +1,7 @@
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { ArrowRight } from "lucide-react";
+import ContactCta from "../../../components/ContactCta";
+import { products } from "../../../lib/products";
+export function generateStaticParams(){return products.map(p=>({slug:p.slug}))}
+export default async function ProductDetail({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const product=products.find(p=>p.slug===slug);if(!product)return notFound();return <main><section className="page-hero"><div className="container"><div className="breadcrumbs">Home → Products → {product.name}</div><h1>{product.name.toUpperCase()}</h1><p>{product.short}</p></div></section><section className="section detail"><div className="container detail-grid"><div className="detail-art" style={{background:product.gradient}}><div className="product-symbol">{product.icon}</div><div className="product-box-shape"/></div><div><h1>{product.name}</h1><p>{product.description}</p><div className="feature-list">{product.features.map(f=><div key={f}><span>✓</span>{f}</div>)}</div><Link href="/contact" className="btn btn-orange">REQUEST A QUOTE <ArrowRight size={14}/></Link></div></div></section><section className="section"><div className="container"><h2>DESCRIPTION &amp; SPECIFICATIONS</h2><p style={{color:"#687786",lineHeight:1.8,fontSize:14,maxWidth:800}}>Product specifications can be finalized based on your packaging requirement, dimensions, material, quantity and application.</p></div></section><ContactCta/></main>}
