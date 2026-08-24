@@ -26,29 +26,32 @@ export const metadata: Metadata = {
     "packaging pouches",
     "corrugated sheets",
   ],
-  alternates: {
-    canonical: "/",
-  },
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     siteName: "Pack India",
     title: "Pack India | Packaging Solutions",
-    description:
-      "Reliable packaging products and solutions for protection, storage and transportation.",
+    description: "Reliable packaging products and solutions for protection, storage and transportation.",
     url: siteUrl,
   },
   twitter: {
     card: "summary",
     title: "Pack India | Packaging Solutions",
-    description:
-      "Reliable packaging products and solutions for protection, storage and transportation.",
+    description: "Reliable packaging products and solutions for protection, storage and transportation.",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Pack India",
+  url: siteUrl,
+  email: "info@packindia.net",
+  telephone: "+91 98765 43210",
+  description: "Packaging products and solutions including corrugated boxes, tapes, bubble wrap, stretch film, pouches and corrugated sheets.",
 };
 
 export default function RootLayout({children}:{children:React.ReactNode}){
-  return <html lang="en"><body><Header/>{children}<Footer/></body></html>
+  return <html lang="en"><body><Header/>{children}<Footer/><script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(organizationSchema)}} /></body></html>
 }
