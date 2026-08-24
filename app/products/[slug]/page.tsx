@@ -1,11 +1,32 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, Check, MessageCircle, ShieldCheck, Truck, PackageCheck } from "lucide-react";
 import ContactCta from "../../../components/ContactCta";
 import { products } from "../../../lib/products";
 
+const siteUrl = "https://packindia-net.vercel.app";
+
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const product = products.find((p) => p.slug === slug);
+  if (!product) return {};
+
+  return {
+    title: product.name,
+    description: product.description,
+    alternates: { canonical: `/products/${product.slug}` },
+    openGraph: {
+      title: `${product.name} | Pack India`,
+      description: product.description,
+      url: `${siteUrl}/products/${product.slug}`,
+      type: "website",
+    },
+  };
 }
 
 export default async function ProductDetail({ params }: { params: Promise<{ slug: string }> }) {
