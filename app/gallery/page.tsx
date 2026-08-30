@@ -1,21 +1,19 @@
 import Link from "next/link";
-import { ArrowRight, Boxes, CircleDot, Layers3, Package, Warehouse, Truck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import ContactCta from "../../components/ContactCta";
 
-const gallery = [
-  { title:"Corrugated Boxes", text:"Strong and practical packaging for shipping and storage.", icon:Boxes },
-  { title:"Packaging Tapes", text:"Reliable sealing solutions for everyday operations.", icon:Package },
-  { title:"Bubble Wrap", text:"Protective cushioning for fragile products.", icon:CircleDot },
-  { title:"Stretch Film", text:"Secure wrapping for pallets, cartons and loads.", icon:Layers3 },
-  { title:"Packaging Pouches", text:"Flexible packaging options for different applications.", icon:Package },
-  { title:"Corrugated Sheets", text:"Versatile protective sheets for packing requirements.", icon:Layers3 },
-  { title:"Warehouse & Stock", text:"Organised packaging inventory ready for dispatch.", icon:Warehouse },
-  { title:"Dispatch & Delivery", text:"Packaging solutions prepared for timely delivery.", icon:Truck },
+const catalogueSheets = [
+  { page: 2, title: "Product Catalogue — Page 2", image: "/packindia-page2.svg" },
+  { page: 3, title: "Product Catalogue — Page 3", image: "/packindia-page3.svg" },
+  { page: 4, title: "Product Catalogue — Page 4", image: "/packindia-page4.svg" },
 ];
 
 export default function Gallery(){return <main>
-  <section className="page-hero"><div className="container"><div className="breadcrumbs">Home → Gallery</div><h1>PACK INDIA GALLERY</h1><p>Explore our packaging products, solutions and day-to-day packaging operations.</p></div></section>
-  <section className="section"><div className="container"><div className="section-title"><span>OUR WORK</span><h2>PACKAGING <span className="orange">IN FOCUS</span></h2><p>A visual showcase of the product categories and business areas we support. Real company photographs can be added here once supplied.</p></div><div className="gallery-page-grid">{gallery.map(({title,text,icon:Icon},i)=><article className={`gallery-page-card gallery-page-${i+1}`} key={title}><div className="gallery-page-art"><Icon size={58}/><span>PACK INDIA</span></div><div className="gallery-page-body"><h3>{title}</h3><p>{text}</p></div></article>)}</div></div></section>
-  <section className="section gallery-note"><div className="container"><div className="gallery-note-inner"><div><span className="eyebrow">NEXT VISUAL UPGRADE</span><h2>ADD YOUR REAL PACKAGING PHOTOS</h2><p>Once you provide the Pack India logo, product photographs, warehouse photos and company images, this gallery can be converted into a real company portfolio.</p></div><Link href="/contact" className="btn btn-orange">SEND YOUR REQUIREMENTS <ArrowRight size={15}/></Link></div></div></section>
+  <section className="page-hero"><div className="container"><div className="breadcrumbs">Home → Gallery</div><h1>PACK INDIA GALLERY</h1><p>Real product photographs from the Pack India catalogue.</p></div></section>
+  <section className="section"><div className="container"><div className="section-title"><span>REAL PRODUCT PHOTOS</span><h2>PACK INDIA <span className="orange">CATALOGUE</span></h2><p>Browse the actual Pack India product photographs supplied for the website. The catalogue images cover paper products, films and pouches, tapes, strapping products and packaging machines.</p></div>
+    <div className="catalogue-gallery">{catalogueSheets.map(sheet=><article className="catalogue-card" key={sheet.page}><div className="catalogue-image"><img src={sheet.image} alt={sheet.title} loading="lazy"/></div><div className="catalogue-card-body"><span>CATALOGUE PAGE {sheet.page}</span><h3>{sheet.title}</h3></div></article>)}</div>
+  </div></section>
+  <section className="section gallery-note"><div className="container"><div className="gallery-note-inner"><div><span className="eyebrow">PACK INDIA PRODUCTS</span><h2>NEED A QUOTATION?</h2><p>Tell us the product, required size and quantity. We can help with your packaging requirement.</p></div><Link href="/contact" className="btn btn-orange">REQUEST A QUOTE <ArrowRight size={15}/></Link></div></div></section>
   <ContactCta/>
+  <style jsx>{` .catalogue-gallery{display:grid;grid-template-columns:1fr;gap:24px}.catalogue-card{border:1px solid #e4e9ed;background:#fff;box-shadow:0 10px 28px rgba(8,42,70,.06);overflow:hidden}.catalogue-image{background:#f4f6f7;padding:12px;display:flex;justify-content:center}.catalogue-image img{display:block;width:100%;height:auto;max-height:650px;object-fit:contain}.catalogue-card-body{padding:16px 18px}.catalogue-card-body span{font-size:10px;color:#f36b21;font-weight:800;letter-spacing:1.1px}.catalogue-card-body h3{margin:5px 0 0;color:#092a4c;font-size:17px}@media(max-width:600px){.catalogue-image{padding:6px}.catalogue-card-body{padding:12px}} `}</style>
 </main>}
