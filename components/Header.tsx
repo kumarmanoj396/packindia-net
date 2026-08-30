@@ -16,7 +16,6 @@ const mobileLinks = [
 
 export default function Header(){
   const [menuOpen, setMenuOpen] = useState(false);
-
   const closeMenu = () => setMenuOpen(false);
 
   return <header>
@@ -25,7 +24,7 @@ export default function Header(){
         <span>Welcome to Pack India - Your Trusted Packaging Partner</span>
         <div className="top-contact">
           <a href="mailto:info@packindia.net"><Mail size={13}/> info@packindia.net</a>
-          <a href="tel:+919876543210"><Phone size={13}/> +91 98765 43210</a>
+          <a href="tel:+918317460842"><Phone size={13}/> +91 83174 60842</a>
         </div>
       </div>
     </div>
@@ -47,19 +46,11 @@ export default function Header(){
         <div className="header-actions">
           <Link className="btn btn-orange quote-btn" href="/contact" onClick={closeMenu}>GET A QUOTE</Link>
           <div className="mobile-menu">
-            <button
-              type="button"
-              className="mobile-menu-toggle"
-              aria-label={menuOpen ? "Close navigation" : "Open navigation"}
-              aria-expanded={menuOpen}
-              onClick={() => setMenuOpen(value => !value)}
-            >
+            <button type="button" className="mobile-menu-toggle" aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen} onClick={() => setMenuOpen(value => !value)}>
               {menuOpen ? <X size={23}/> : <Menu size={23}/>} 
             </button>
             {menuOpen && <div className="mobile-menu-panel">
-              {mobileLinks.map(([label, href]) => (
-                <Link key={href} href={href} onClick={closeMenu}>{label}</Link>
-              ))}
+              {mobileLinks.map(([label, href]) => <Link key={href} href={href} onClick={closeMenu}>{label}</Link>)}
             </div>}
           </div>
         </div>
