@@ -23,8 +23,8 @@ export default function Header(){
       <div className="container topbar-inner">
         <span>Welcome to Pack India - Your Trusted Packaging Partner</span>
         <div className="top-contact">
-          <a href="mailto:info@packindia.net"><Mail size={13}/> info@packindia.net</a>
-          <a href="tel:+918317460842"><Phone size={13}/> +91 83174 60842</a>
+          <a href="mailto:sales.packindia@gmail.com"><Mail size={13}/> sales.packindia@gmail.com</a>
+          <a href="tel:+918123166638"><Phone size={13}/> +91 81231 66638</a>
         </div>
       </div>
     </div>
