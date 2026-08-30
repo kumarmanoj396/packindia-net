@@ -10,34 +10,37 @@ const siteUrl = "https://packindia-net.vercel.app";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Pack India | Packaging Solutions",
+    default: "Pack India | Packaging Materials & Machines",
     template: "%s | Pack India",
   },
   description:
-    "Pack India provides reliable packaging products and solutions including corrugated boxes, packaging tapes, bubble wrap, stretch film, pouches and corrugated sheets.",
+    "Pack India offers angle board, paper core, packing materials, flexible packaging products, strapping tools and auto packaging machines.",
   keywords: [
     "Pack India",
-    "packaging solutions",
-    "packaging products",
-    "corrugated boxes",
-    "packaging tapes",
-    "bubble wrap",
+    "packaging materials",
+    "angle board",
+    "paper core",
+    "paper tube",
     "stretch film",
-    "packaging pouches",
-    "corrugated sheets",
+    "shrink film",
+    "bubble film",
+    "BOPP tape",
+    "strapping machine",
+    "packaging machines",
+    "Hoskote Bengaluru packaging",
   ],
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     siteName: "Pack India",
-    title: "Pack India | Packaging Solutions",
-    description: "Reliable packaging products and solutions for protection, storage and transportation.",
+    title: "Pack India | Packaging Materials & Machines",
+    description: "Packaging materials, flexible packaging products, strapping tools and auto packaging machines.",
     url: siteUrl,
   },
   twitter: {
     card: "summary",
-    title: "Pack India | Packaging Solutions",
-    description: "Reliable packaging products and solutions for protection, storage and transportation.",
+    title: "Pack India | Packaging Materials & Machines",
+    description: "Packaging materials, flexible packaging products, strapping tools and auto packaging machines.",
   },
   robots: { index: true, follow: true },
 };
@@ -46,10 +49,18 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Pack India",
-  url: siteUrl,
-  email: "info@packindia.net",
-  telephone: "+91 98765 43210",
-  description: "Packaging products and solutions including corrugated boxes, tapes, bubble wrap, stretch film, pouches and corrugated sheets.",
+  url: "https://www.packindia.net",
+  email: ["sales.packindia@gmail.com", "packindia1991@gmail.com"],
+  telephone: ["+91 81231 66638", "+91 98447 23888"],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Sy No.117/4, Dodda Hullur Village, Kasaba Hobli",
+    addressLocality: "Hoskote",
+    addressRegion: "Karnataka",
+    postalCode: "562114",
+    addressCountry: "IN"
+  },
+  description: "Mfg. of Angle Board, Paper Core, Packing Materials & Auto Machines."
 };
 
 export default function RootLayout({children}:{children:React.ReactNode}){
