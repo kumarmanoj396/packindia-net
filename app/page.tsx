@@ -35,7 +35,7 @@ export default function Home(){
       <div className="container about-home-grid">
         <div className="about-visual">
           <div className="about-building"><span>PACK INDIA</span><small>PACKAGING SOLUTIONS</small><div className="building-windows"/></div>
-          <div className="about-badge"><b>200 MT</b><span>CATALOGUE<br/>CAPACITY NOTE</span></div>
+          <div className="about-badge"><b>PACK</b><span>PACKAGING<br/>SOLUTIONS</span></div>
         </div>
         <div className="about-copy">
           <span className="eyebrow">WHO WE ARE</span>
