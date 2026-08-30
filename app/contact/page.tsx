@@ -17,22 +17,13 @@ export default function Contact(){
     const product = String(data.get("product") || "").trim();
     const quantity = String(data.get("quantity") || "").trim();
     const message = String(data.get("message") || "").trim();
-
     if (!name || !phone || !product || !message) return;
-
     const whatsappMessage = [
-      "*Pack India - New Enquiry*",
-      "",
-      `Name: ${name}`,
-      `Email: ${email || "Not provided"}`,
-      `Phone: ${phone}`,
-      `Product: ${product}`,
-      `Quantity: ${quantity || "Not specified"}`,
-      `Requirement: ${message}`,
+      "*Pack India - New Enquiry*", "", `Name: ${name}`, `Email: ${email || "Not provided"}`, `Phone: ${phone}`,
+      `Product: ${product}`, `Quantity: ${quantity || "Not specified"}`, `Requirement: ${message}`,
     ].join("\n");
-
     setSubmitted(true);
-    window.open(`https://wa.me/919876543210?text=${encodeURIComponent(whatsappMessage)}`, "_blank", "noopener,noreferrer");
+    window.open(`https://wa.me/918317460842?text=${encodeURIComponent(whatsappMessage)}`, "_blank", "noopener,noreferrer");
     form.reset();
   }
 
@@ -41,27 +32,15 @@ export default function Contact(){
     <section className="section"><div className="container contact-grid contact-enhanced">
       <div className="contact-left"><span className="eyebrow">LET'S CONNECT</span><h2>GET IN TOUCH</h2><p className="contact-intro">Tell us what you need and our team will help you find the right packaging solution for your business.</p><div className="contact-info">
         <div className="contact-item"><MapPin/><div><b>ADDRESS</b><span>Industrial Area, Bangalore – 560099, Karnataka, India</span></div></div>
-        <div className="contact-item"><Phone/><div><b>PHONE</b><span>+91 98765 43210</span></div></div>
+        <div className="contact-item"><Phone/><div><b>PHONE</b><span>+91 83174 60842</span></div></div>
         <div className="contact-item"><Mail/><div><b>EMAIL</b><span>info@packindia.net</span></div></div>
         <div className="contact-item"><Clock3/><div><b>BUSINESS HOURS</b><span>Mon - Sat: 9:00 AM - 6:00 PM<br/>Sunday: Closed</span></div></div>
-      </div><a className="whatsapp-contact" href="https://wa.me/919876543210" target="_blank" rel="noreferrer"><MessageCircle/> WhatsApp Us <ArrowRight/></a></div>
+      </div><a className="whatsapp-contact" href="https://wa.me/918317460842" target="_blank" rel="noreferrer"><MessageCircle/> WhatsApp Us <ArrowRight/></a></div>
       <form className="form contact-form" onSubmit={handleSubmit}>
         <div className="form-heading"><span>QUICK ENQUIRY</span><h3>SEND US A MESSAGE</h3><p>Share your requirement and we'll open a ready-to-send WhatsApp enquiry.</p></div>
-        <input name="name" placeholder="Your Name *" required />
-        <input name="email" placeholder="Your Email" type="email" />
-        <input name="phone" placeholder="Your Phone *" type="tel" required />
-        <select name="product" defaultValue="" required aria-label="Select Product">
-          <option value="" disabled>Select Product *</option>
-          <option>Corrugated Boxes</option>
-          <option>Packaging Tapes</option>
-          <option>Bubble Wrap</option>
-          <option>Stretch Film</option>
-          <option>Packaging Pouches</option>
-          <option>Corrugated Sheets</option>
-          <option>Other Packaging Requirement</option>
-        </select>
-        <input name="quantity" placeholder="Quantity / Approx. Requirement" />
-        <textarea name="message" placeholder="Tell us your size, material, application or other requirement *" required />
+        <input name="name" placeholder="Your Name *" required /><input name="email" placeholder="Your Email" type="email" /><input name="phone" placeholder="Your Phone *" type="tel" required />
+        <select name="product" defaultValue="" required aria-label="Select Product"><option value="" disabled>Select Product *</option><option>Corrugated Boxes</option><option>Packaging Tapes</option><option>Bubble Wrap</option><option>Stretch Film</option><option>Packaging Pouches</option><option>Corrugated Sheets</option><option>Other Packaging Requirement</option></select>
+        <input name="quantity" placeholder="Quantity / Approx. Requirement" /><textarea name="message" placeholder="Tell us your size, material, application or other requirement *" required />
         <button className="btn btn-orange" type="submit"><MessageCircle size={15}/> SEND ENQUIRY ON WHATSAPP <ArrowRight size={15}/></button>
         {submitted && <div className="form-success"><CheckCircle2 size={17}/> WhatsApp opened with your enquiry. Please send the message to complete the request.</div>}
       </form>
