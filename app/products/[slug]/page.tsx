@@ -48,9 +48,8 @@ export default async function ProductDetail({ params }: { params: Promise<{ slug
       <section className="section detail">
         <div className="container detail-grid">
           <div>
-            <div className="detail-art" style={{ background: product.gradient, borderRadius: 2 }}>
-              <div className="product-symbol">{product.icon}</div>
-              <div className="product-box-shape" />
+            <div className="detail-art product-detail-image">
+              <img src={product.image} alt={product.name} />
             </div>
             <div className="gallery-grid" style={{ marginTop: 10, gridTemplateColumns: "repeat(4,1fr)" }}>
               {[1, 2, 3, 4].map((item) => <div className={`gallery-item gallery-${item}`} key={item} style={{ height: 78, padding: 0 }} />)}

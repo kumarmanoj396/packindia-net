@@ -7,7 +7,20 @@ export type Product = {
   features: string[];
   gradient: string;
   icon: string;
+  image: string;
 };
+
+function productImage(name: string, category: string) {
+  if (category === "Paper & Board") {
+    if (name.toLowerCase().includes("core")) return "/product-images/paper-core.png";
+    if (name.toLowerCase().includes("tube")) return "/product-images/paper-tube.png";
+    return "/product-images/angle-board.png";
+  }
+  if (category === "Films & Pouches") return "/product-images/stretch-film.png";
+  if (category === "Tapes") return "/product-images/bopp-tapes.png";
+  if (category === "Strapping & Tools") return "/product-images/strapping-machine.png";
+  return "/product-images/packing-machine.png";
+}
 
 const makeProduct = (name: string, category: string, icon: string, gradient: string): Product => ({
   slug: name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""),
@@ -18,6 +31,7 @@ const makeProduct = (name: string, category: string, icon: string, gradient: str
   features: ["Listed in the Pack India catalogue", "Specifications available as per requirement", "Suitable for packaging applications", "Contact Pack India for quotation"],
   gradient,
   icon,
+  image: productImage(name, category),
 });
 
 export const products: Product[] = [
