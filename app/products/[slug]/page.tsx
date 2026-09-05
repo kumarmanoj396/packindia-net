@@ -71,7 +71,7 @@ export default async function ProductDetail({ params }: { params: Promise<{ slug
         </div>
       </section>
 
-      <section className="section" style={{ background: "#f7f9fb", paddingTop: 45 }}>
+      <section className="section product-information" style={{ paddingTop: 45 }}>
         <div className="container">
           <div className="section-title" style={{ textAlign: "left", margin: "0 0 25px", maxWidth: 760 }}>
             <span>PRODUCT INFORMATION</span>
