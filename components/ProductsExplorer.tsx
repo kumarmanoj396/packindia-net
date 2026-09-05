@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import { products } from "../lib/products";
 
@@ -8,6 +8,10 @@ const categories = ["All Products", ...Array.from(new Set(products.map((product)
 
 export default function ProductsExplorer() {
   const [active, setActive] = useState("All Products");
+  useEffect(() => {
+    const category = new URLSearchParams(window.location.search).get("category");
+    if (category && categories.includes(category)) setActive(category);
+  }, []);
   const visibleProducts = active === "All Products" ? products : products.filter((product) => product.category === active);
 
   return (
