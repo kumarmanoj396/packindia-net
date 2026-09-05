@@ -1,6 +1,6 @@
 /* Brand treatment matched to the supplied Pack India brochure and visiting card. */
 :root{--pack-navy:#21216c;--pack-orange:#f47d17;--pack-green:#00a651;--text:#242456;--heading:#25267e;--accent:#f47d17;--accent-2:#f47d17;--footer:#21216c;--hero-overlay:#21216c;--nav:#fff;--surface:#fff;--surface-soft:#f5f6fb;--border:#dcddef}
-html[data-theme="dark"]{--bg:#fff;--surface:#fff;--surface-soft:#f5f6fb;--text:#242456;--heading:#25267e;--muted:#5e607f;--muted-2:#5e607f;--border:#dcddef;--border-2:#dcddef;--nav:#fff;--footer:#21216c}
+html[data-theme="dark"]{color-scheme:dark;--bg:#12133f;--surface:#1e1f60;--surface-soft:#171850;--text:#f7f7ff;--heading:#fff;--muted:#d3d4ef;--muted-2:#d3d4ef;--border:#565898;--border-2:#6b6dac;--nav:#17184e;--footer:#101138}
 .topbar,.footer-bottom,.lead-strip,.contact-cta{background:var(--pack-navy)}
 .nav-wrap{border-bottom:3px solid var(--pack-green)}
 .nav{height:82px;gap:20px}.brand{min-width:306px;height:62px;display:flex}.brand-logo{display:block;width:300px;height:44px;object-fit:contain;object-position:left center}.footer-logo{display:block;width:252px;height:auto;background:#fff}
@@ -9,10 +9,10 @@ nav a{font-size:10px;color:#21216c;letter-spacing:.15px}nav a:hover,.mobile-menu
 .hero{min-height:450px;background:var(--pack-navy);border-bottom:9px solid var(--pack-orange)}.hero:before{display:none}.hero-inner{min-height:450px;padding:52px 0}.hero-copy{width:51%}.eyebrow,.section-title span{color:var(--pack-orange)}
 .hero h1{font-size:44px;line-height:1.04;letter-spacing:.2px}.hero h1 span,.orange{color:var(--pack-orange)}.hero p{font-size:15px}
 .hero-machine{right:0;bottom:0;width:52%;height:100%;transform:none;display:flex;align-items:flex-end}.hero-machine img{width:100%;height:auto;display:block;object-fit:contain}
-.product-section{background:#f6f7fc}.section{padding:68px 0}.section-title h2{font-size:32px;color:var(--pack-navy);letter-spacing:.2px}
+.product-section{background:var(--surface-soft)}.section{padding:68px 0}.section-title h2{font-size:32px;color:var(--heading);letter-spacing:.2px}
 .product-card{border:2px solid var(--pack-navy);box-shadow:none}.product-card:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(33,33,108,.16)}.product-art{height:140px;background:#fff!important}.product-art:after{display:none}.product-symbol{color:var(--pack-orange);text-shadow:none}.product-box-shape{border-color:var(--pack-navy)}.product-card h3{color:var(--pack-navy);font-size:13px}.product-card span{color:var(--pack-orange)}
-.about-home{background:#fff}.about-visual{background:linear-gradient(135deg,#e8ebf7,#b9c4df)}.about-building{color:var(--pack-navy)}.about-badge{background:var(--pack-orange)}.lead-strip{border-top:4px solid var(--pack-orange)}.lead-grid svg{color:var(--pack-orange)}
-.page-hero{background:var(--pack-navy);border-bottom:7px solid var(--pack-orange)}.breadcrumbs{color:#fff}.page-hero h1{font-size:38px}.page-hero p{font-size:14px}.footer-main{background:#f4f5fb}.footer-grid h4{color:var(--pack-navy)}.footer-bottom{border-top:4px solid var(--pack-orange)}
+.about-home{background:var(--surface)}.about-visual{background:linear-gradient(135deg,#e8ebf7,#b9c4df)}.about-building{color:var(--pack-navy)}.about-badge{background:var(--pack-orange)}.lead-strip{border-top:4px solid var(--pack-orange)}.lead-grid svg{color:var(--pack-orange)}
+.page-hero{background:var(--pack-navy);border-bottom:7px solid var(--pack-orange)}.breadcrumbs{color:#fff}.page-hero h1{font-size:38px}.page-hero p{font-size:14px}.footer-main{background:var(--surface-soft)}.footer-grid h4{color:var(--heading)}.footer-bottom{border-top:4px solid var(--pack-orange)}
 @media(max-width:1100px){.brand{min-width:252px}.brand-logo{width:245px}.nav{gap:12px}nav{gap:12px}}
 @media(max-width:900px){.brand{min-width:250px}.hero-copy{width:60%}.hero-machine{width:51%;opacity:.86}}
 @media(max-width:600px){.nav{height:72px}.brand{min-width:0;height:48px}.brand-logo{width:205px;height:34px}.hero{min-height:620px}.hero-inner{min-height:620px;padding-top:46px}.hero-copy{width:100%}.hero h1{font-size:35px}.hero-machine{width:100%;height:250px;right:0;opacity:.55}.hero-machine img{width:150%;max-width:none;transform:translateX(-20%)}.footer-logo{width:220px}}

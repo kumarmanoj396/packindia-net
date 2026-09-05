@@ -66,5 +66,6 @@ const organizationSchema = {
 };
 
 export default function RootLayout({children}:{children:React.ReactNode}){
-  return <html lang="en"><body><Header/>{children}<Footer/><script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(organizationSchema)}} /></body></html>
+  const themeScript = `try { const saved = localStorage.getItem("packindia-theme"); const theme = saved === "light" || saved === "dark" ? saved : (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); document.documentElement.dataset.theme = theme; } catch {}`;
+  return <html lang="en" suppressHydrationWarning><head><script dangerouslySetInnerHTML={{__html: themeScript}} /></head><body><Header/>{children}<Footer/><script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(organizationSchema)}} /></body></html>
 }
