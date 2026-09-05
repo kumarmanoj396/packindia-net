@@ -1,0 +1,18 @@
+:root{--brand-navy:#1b1464;--brand-orange:#f58220;--brand-green:#00a651;--brand-blue:#00a9e8;--brand-ink:#17204d}
+html[data-theme="dark"]{--brand-navy:#28217d;--brand-ink:#f5f7ff}
+.topbar{background:var(--brand-navy)}
+.nav-wrap{background:var(--nav)}
+.brand-mark{width:46px;height:46px;background:transparent!important;transform:none!important;box-shadow:none!important;font-size:0!important;border-radius:0!important;position:relative;overflow:hidden}
+.brand-mark::before{content:"";position:absolute;inset:0;background:url('/packindia-logo.svg') center/contain no-repeat}
+.brand b em{color:var(--brand-navy)}
+html[data-theme="dark"] .brand b em{color:#ff9a4b}
+.brand small{color:var(--brand-navy)}
+html[data-theme="dark"] .brand small{color:#b9c4ff}
+nav a:hover{color:var(--brand-orange)}
+.btn-orange{background:var(--brand-orange);box-shadow:0 5px 12px rgba(245,130,32,.22)}
+.theme-toggle:hover{border-color:var(--brand-orange)}
+.eyebrow,.orange,.breadcrumbs,.section-title span,.product-card span,.about-checks svg,.text-link,.lead-grid svg,.service-card .icon,.contact-item svg,.feature-list span{color:var(--brand-orange)}
+.hero{background:linear-gradient(90deg,var(--brand-navy) 0%,var(--brand-navy) 42%,rgba(27,20,100,.84) 57%,rgba(27,20,100,.18) 100%),linear-gradient(135deg,#263074,#d08a42)}
+.lead-strip,.contact-cta,.footer-bottom{background:var(--brand-navy)}
+.page-hero{background:linear-gradient(90deg,var(--brand-navy),#28266f 55%,#536a78)}
+.section-title h2,.about-copy h2,.detail h1{color:var(--heading)}
