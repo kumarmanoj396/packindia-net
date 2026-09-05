@@ -41,7 +41,8 @@ export default function Header(){
           <Link href="/">HOME</Link>
           <Link href="/about">ABOUT US</Link>
           <div className="products-menu">
-            <button type="button" className="products-menu-toggle" aria-expanded={productsOpen} aria-controls="products-dropdown" onClick={() => setProductsOpen(value => !value)}>PRODUCTS <ChevronDown size={12} className={productsOpen ? "chevron-open" : undefined}/></button>
+            <Link href="/products" className="products-menu-link" onClick={() => setProductsOpen(false)}>PRODUCTS</Link>
+            <button type="button" className="products-menu-toggle" aria-label="Open product categories" aria-expanded={productsOpen} aria-controls="products-dropdown" onClick={() => setProductsOpen(value => !value)}><ChevronDown size={12} className={productsOpen ? "chevron-open" : undefined}/></button>
             {productsOpen && <div id="products-dropdown" className="products-dropdown">
               <a href="/products" className="all-products-link">VIEW ALL PRODUCTS</a>
               {productLinks.map((label) => <a key={label} href={`/products?category=${encodeURIComponent(label)}`}>{label}</a>)}

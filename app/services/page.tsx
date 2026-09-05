@@ -33,8 +33,8 @@ export default function Services() {
 
           <div className="service-grid">
             {services.map(({ icon: Icon, title, text }) => (
-              <article className="service-card" key={title} style={{ transition: "transform .2s, box-shadow .2s", background: "#fff" }}>
-                <div className="icon" style={{ width: 48, height: 48, borderRadius: 10, display: "grid", placeItems: "center", background: "#fff4eb", marginBottom: 14 }}>
+              <article className="service-card" key={title} style={{ transition: "transform .2s, box-shadow .2s" }}>
+                <div className="icon" style={{ width: 48, height: 48, borderRadius: 10, display: "grid", placeItems: "center", marginBottom: 14 }}>
                   <Icon size={25} />
                 </div>
                 <h3>{title}</h3>
