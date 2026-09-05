@@ -31,9 +31,8 @@ export default function Header(){
     </div>
     <div className="nav-wrap">
       <div className="container nav">
-        <Link href="/" className="brand" onClick={closeMenu}>
-          <span className="brand-mark">◆</span>
-          <span><b>PACK <em>INDIA</em></b><small>PACKAGING SOLUTIONS</small></span>
+        <Link href="/" className="brand" onClick={closeMenu} aria-label="Pack India home">
+          <img className="brand-logo" src="/packindia-logo-lockup.png" alt="Pack India - manufacturer of angle board, paper core, packing materials and auto machines" />
         </Link>
         <nav>
           <Link href="/">HOME</Link>

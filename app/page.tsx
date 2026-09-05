@@ -12,17 +12,16 @@ export default function Home(){
     <section className="hero" style={{minHeight:"410px"}}>
       <div className="container hero-inner" style={{padding:"62px 0 54px"}}>
         <div className="hero-copy" style={{width:"53%"}}>
-          <span className="eyebrow">SMART PACKAGING SOLUTIONS</span>
-          <h1>SMART PACKAGING<br/><span>STRONGER BUSINESS</span></h1>
-          <p>High quality packaging products for every industry. Safe. Reliable. Sustainable.</p>
+          <span className="eyebrow">COMPLETE PACKAGING SOLUTIONS</span>
+          <h1>QUALITY. PRODUCTION.<br/><span>GROWTH.</span></h1>
+          <p>Manufacturers of angle board, paper core, packing materials and auto machines.</p>
           <div className="hero-points">
             <div className="hero-point"><i><ShieldCheck size={15}/></i>Premium Quality</div><div className="hero-point"><i><Clock3 size={15}/></i>Timely Delivery</div><div className="hero-point"><i><HeartHandshake size={15}/></i>Customer Satisfaction</div>
           </div>
           <div className="hero-actions"><Link href="/products" className="btn btn-orange">OUR PRODUCTS <ArrowRight size={14}/></Link><Link href="/contact" className="btn btn-outline">CONTACT US <ArrowRight size={14}/></Link></div>
         </div>
-        <div className="hero-visual" aria-label="Packaging products visual">
-          <div className="hero-box box-one"><span>PACK</span></div><div className="hero-box box-two"><span>INDIA</span></div>
-          <div className="hero-sheet sheet-one"/><div className="hero-sheet sheet-two"/><div className="hero-roll roll-one"/><div className="hero-roll roll-two"/><div className="hero-roll roll-three"/><div className="hero-tape tape-one"/><div className="hero-tape tape-two"/>
+        <div className="hero-visual hero-machine" aria-label="Pack India packaging machine">
+          <img src="/packindia-machine-hero.png" alt="Pack India packaging production machine" />
         </div>
       </div>
     </section>

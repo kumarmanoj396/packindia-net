@@ -2,6 +2,7 @@ import "./globals.css";
 import "./brand-theme.css";
 import "./responsive.css";
 import "./mobile-polish.css";
+import "./brand.css";
 import type { Metadata } from "next";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
