@@ -1,4 +1,5 @@
 import "./globals.css";
+import "./brand-theme.css";
 import "./responsive.css";
 import "./mobile-polish.css";
 import type { Metadata } from "next";
