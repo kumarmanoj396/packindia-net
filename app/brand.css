@@ -5,6 +5,7 @@ html[data-theme="dark"]{color-scheme:dark;--bg:#12133f;--surface:#1e1f60;--surfa
 .nav-wrap{border-bottom:3px solid var(--pack-green)}
 .nav{height:82px;gap:20px}.brand{min-width:306px;height:62px;display:flex}.brand-logo{display:block;width:300px;height:44px;object-fit:contain;object-position:left center}.footer-logo{display:block;width:252px;height:auto;background:#fff}
 nav a{font-size:10px;color:#21216c;letter-spacing:.15px}nav a:hover,.mobile-menu-panel a:hover{color:var(--pack-orange)}
+html[data-theme="dark"] nav a{color:#fff}html[data-theme="dark"] nav a:hover{color:var(--pack-orange)}
 .btn-orange{background:var(--pack-orange);box-shadow:none}.btn{letter-spacing:.2px}.theme-toggle{color:var(--pack-navy)}
 .hero{min-height:450px;background:var(--pack-navy);border-bottom:9px solid var(--pack-orange)}.hero:before{display:none}.hero-inner{min-height:450px;padding:52px 0}.hero-copy{width:51%}.eyebrow,.section-title span{color:var(--pack-orange)}
 .hero h1{font-size:44px;line-height:1.04;letter-spacing:.2px}.hero h1 span,.orange{color:var(--pack-orange)}.hero p{font-size:15px}
