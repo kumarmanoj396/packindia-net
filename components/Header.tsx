@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Phone, Mail, ChevronDown, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 
 const mobileLinks = [
@@ -20,7 +20,23 @@ const productLinks = ["Paper & Board", "Films & Pouches", "Tapes", "Strapping & 
 export default function Header(){
   const [menuOpen, setMenuOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
+  const productsMenuRef = useRef<HTMLDivElement>(null);
   const closeMenu = () => { setMenuOpen(false); setProductsOpen(false); };
+
+  useEffect(() => {
+    const closeProductsMenu = (event: MouseEvent) => {
+      if (productsMenuRef.current && !productsMenuRef.current.contains(event.target as Node)) setProductsOpen(false);
+    };
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setProductsOpen(false);
+    };
+    document.addEventListener("mousedown", closeProductsMenu);
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.removeEventListener("mousedown", closeProductsMenu);
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, []);
 
   return <header>
     <div className="topbar">
@@ -40,12 +56,12 @@ export default function Header(){
         <nav>
           <Link href="/">HOME</Link>
           <Link href="/about">ABOUT US</Link>
-          <div className="products-menu">
+          <div className="products-menu" ref={productsMenuRef}>
             <Link href="/products" className="products-menu-link" onClick={() => setProductsOpen(false)}>PRODUCTS</Link>
             <button type="button" className="products-menu-toggle" aria-label="Open product categories" aria-expanded={productsOpen} aria-controls="products-dropdown" onClick={() => setProductsOpen(value => !value)}><ChevronDown size={12} className={productsOpen ? "chevron-open" : undefined}/></button>
             {productsOpen && <div id="products-dropdown" className="products-dropdown">
-              <a href="/products" className="all-products-link">VIEW ALL PRODUCTS</a>
-              {productLinks.map((label) => <a key={label} href={`/products?category=${encodeURIComponent(label)}`}>{label}</a>)}
+              <a href="/products" className="all-products-link" onClick={() => setProductsOpen(false)}>VIEW ALL PRODUCTS</a>
+              {productLinks.map((label) => <a key={label} href={`/products?category=${encodeURIComponent(label)}`} onClick={() => setProductsOpen(false)}>{label}</a>)}
             </div>}
           </div>
           <Link href="/services">SERVICES</Link>
