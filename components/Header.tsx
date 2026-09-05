@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Phone, Mail, ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 const mobileLinks = [
   ["HOME", "/"],
@@ -44,6 +45,7 @@ export default function Header(){
           <Link href="/contact">CONTACT US</Link>
         </nav>
         <div className="header-actions">
+          <ThemeToggle />
           <Link className="btn btn-orange quote-btn" href="/contact" onClick={closeMenu}>GET A QUOTE</Link>
           <div className="mobile-menu">
             <button type="button" className="mobile-menu-toggle" aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen} onClick={() => setMenuOpen(value => !value)}>
