@@ -33,8 +33,11 @@ export default function Home(){
     <section className="section about-home" id="about-home">
       <div className="container about-home-grid">
         <div className="about-visual">
-          <div className="about-building"><span>PACK INDIA</span><small>PACKAGING SOLUTIONS</small><div className="building-windows"/></div>
-          <div className="about-badge"><b>PACK</b><span>PACKAGING<br/>SOLUTIONS</span></div>
+          <div className="about-logo-panel">
+            <img src="/packindia-logo-lockup.png" alt="Pack India" />
+            <span>COMPLETE PACKAGING SOLUTIONS</span>
+          </div>
+          <div className="about-badge"><b>PACK INDIA</b><span>QUALITY · PRODUCTION<br/>· GROWTH</span></div>
         </div>
         <div className="about-copy">
           <span className="eyebrow">WHO WE ARE</span>
