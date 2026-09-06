@@ -10,7 +10,47 @@ export type Product = {
   image: string;
 };
 
+const suppliedProductImages: Record<string, string> = {
+  "Paper Core": "/product-images/catalog/paper-core.png",
+  "Paper Tube": "/product-images/catalog/paper-tube.png",
+  "Angle Board": "/product-images/catalog/angle-board.png",
+  "OD Protector": "/product-images/catalog/od-protector.jpeg",
+  "Vertical Protection": "/product-images/catalog/vertical-protection.png",
+  "ID Protectors": "/product-images/catalog/vertical-protection.png",
+  "Self Adhesive Edge Board": "/product-images/catalog/angle-board-flat.png",
+  "Angle Board Flat": "/product-images/catalog/angle-board-flat.png",
+  "Paper Tube Container": "/product-images/catalog/paper-tube-container.png",
+  "Kraft Paper Tubes with Lid": "/product-images/catalog/kraft-paper-tubes-lid.png",
+  "Packing Container": "/product-images/catalog/packing-container.png",
+  "Corrugated Box & Roll, 3 Ply to 9 Ply": "/product-images/catalog/corrugated-box.png",
+  "Pallets": "/product-images/catalog/corrugated-box.png",
+  "LD, LLDPE, PP, BOPP, HM, HDPE - Film": "/product-images/catalog/poly-film.png",
+  "Stretch Film": "/product-images/catalog/ld-shrink-film-roll.png",
+  "Air Bubble Film": "/product-images/catalog/bubble-film.png",
+  "Shrink Film": "/product-images/catalog/shrink-film.png",
+  "Agriculture Film": "/product-images/catalog/agriculture-film.png",
+  "Air Bubble Pouch": "/product-images/catalog/air-bubble-pouch.png",
+  "Surface Protection Film": "/product-images/catalog/surface-protection-film.png",
+  "PVC Shrink Film": "/product-images/catalog/shrink-film.png",
+  "PVC Pouches": "/product-images/catalog/pvc-pouches.png",
+  "Polyolefin - POF Shrink Film": "/product-images/catalog/pof-shrink-film.png",
+  "LD Shrink Film Roll": "/product-images/catalog/ld-shrink-film-roll.png",
+  "LD / HM Roll": "/product-images/catalog/poly-film.png",
+  "LDPE Vacuum Bag": "/product-images/catalog/ldpe-vacuum-bag.png",
+  "EPE Foam Sheet and Roll": "/product-images/catalog/epe-foam-sheet-roll.png",
+  "Antistatic Air Bubble Roll": "/product-images/catalog/antistatic-air-bubble-roll.png",
+  "Courier Bag": "/product-images/catalog/courier-bag.png",
+  "Baby Stretch Roll": "/product-images/catalog/ld-shrink-film-roll.png",
+  "Paper Bag": "/product-images/catalog/paper-bag.png",
+  "Agriculture Mulch Film": "/product-images/catalog/agriculture-mulch-film.png",
+  "Bubble Film": "/product-images/catalog/bubble-film.png",
+  "VCI Film": "/product-images/catalog/vci-film.png",
+  "VCI Bag": "/product-images/catalog/vci-film.png",
+  "Zip Lock": "/product-images/catalog/pvc-pouches.png",
+};
+
 function productImage(name: string, category: string) {
+  if (suppliedProductImages[name]) return suppliedProductImages[name];
   if (category === "Paper & Board") {
     if (name.toLowerCase().includes("core")) return "/product-images/paper-core.png";
     if (name.toLowerCase().includes("tube")) return "/product-images/paper-tube.png";

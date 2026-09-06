@@ -56,8 +56,8 @@ export default function Home(){
 
     <LeadStrip/>
     <section className="section" id="gallery"><div className="container"><SectionTitle eyebrow="OUR WORK" title={<>PACKAGING <span className="orange">IN FOCUS</span></>}/><div className="home-gallery-grid">{[
-      ["Paper Core", "/product-images/paper-core.png"], ["Paper Tube", "/product-images/paper-tube.png"], ["Angle Board", "/product-images/angle-board.png"],
-      ["Stretch Film", "/product-images/stretch-film.png"], ["BOPP Tapes", "/product-images/bopp-tapes.png"], ["Packaging Machines", "/product-images/packing-machine.png"],
+      ["Paper Core", "/product-images/catalog/paper-core.png"], ["Paper Tube", "/product-images/catalog/paper-tube.png"], ["Angle Board", "/product-images/catalog/angle-board.png"],
+      ["Vertical Protection", "/product-images/catalog/vertical-protection.png"], ["Surface Protection Film", "/product-images/catalog/surface-protection-film.png"], ["Corrugated Box", "/product-images/catalog/corrugated-box.png"],
     ].map(([name, image])=><Link href="/gallery" className="home-gallery-item" key={name}><img src={image} alt={name}/><span>{name}</span></Link>)}</div></div></section>
     <ContactCta/>
   </main>
