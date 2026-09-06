@@ -48,8 +48,8 @@ export default function Services() {
         </div>
       </section>
 
-      <section style={{ background: "#062b50", color: "#fff", padding: "55px 0" }}>
-        <div className="container" style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 45, alignItems: "center" }}>
+      <section className="promise-section" style={{ background: "#062b50", color: "#fff", padding: "55px 0" }}>
+        <div className="container promise-grid">
           <div>
             <span className="eyebrow">THE PACK INDIA PROMISE</span>
             <h2 style={{ fontSize: 30, margin: "9px 0 15px" }}>PACKAGING SUPPORT THAT WORKS FOR YOUR BUSINESS</h2>
@@ -58,7 +58,7 @@ export default function Services() {
             </p>
             <Link href="/contact" className="btn btn-orange" style={{ marginTop: 14 }}>GET A QUOTE <ArrowRight size={14} /></Link>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+          <div className="promise-benefits">
             {["Quality Products", "Competitive Pricing", "Timely Delivery", "Customer Satisfaction"].map((item) => (
               <div key={item} style={{ border: "1px solid rgba(255,255,255,.18)", padding: "18px 15px", background: "rgba(255,255,255,.04)" }}>
                 <CheckCircle2 size={18} color="#ff7419" />
