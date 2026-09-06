@@ -37,7 +37,7 @@ export default function Home(){
             <img src="/packindia-logo-lockup.png" alt="Pack India" />
             <span>COMPLETE PACKAGING SOLUTIONS</span>
           </div>
-          <div className="about-badge"><b>PACK INDIA</b><span>QUALITY · PRODUCTION<br/>· GROWTH</span></div>
+          <div className="about-badge"><b>PACK INDIA</b><span>QUALITY · PRODUCTION · GROWTH</span></div>
         </div>
         <div className="about-copy">
           <span className="eyebrow">WHO WE ARE</span>
