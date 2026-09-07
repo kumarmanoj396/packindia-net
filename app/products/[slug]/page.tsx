@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, Check, MessageCircle, ShieldCheck, Truck, PackageCheck } from "lucide-react";
+import {
+  ArrowRight,
+  Check,
+  MessageCircle,
+  ShieldCheck,
+  Truck,
+  PackageCheck,
+} from "lucide-react";
 import ContactCta from "../../../components/ContactCta";
 import { products } from "../../../lib/products";
 
@@ -12,7 +19,11 @@ export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
   const { slug } = await params;
   const product = products.find((p) => p.slug === slug);
   if (!product) return {};
@@ -30,7 +41,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export default async function ProductDetail({ params }: { params: Promise<{ slug: string }> }) {
+export default async function ProductDetail({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const product = products.find((p) => p.slug === slug);
   if (!product) return notFound();
@@ -55,33 +70,96 @@ export default async function ProductDetail({ params }: { params: Promise<{ slug
 
           <div>
             <span className="eyebrow">PACK INDIA PRODUCT</span>
-            <div style={{fontSize:11,color:"#f36b21",fontWeight:800,letterSpacing:1.2,marginBottom:6}}>{product.category.toUpperCase()}</div>
+            <div
+              style={{
+                fontSize: 11,
+                color: "#f36b21",
+                fontWeight: 800,
+                letterSpacing: 1.2,
+                marginBottom: 6,
+              }}
+            >
+              {product.category.toUpperCase()}
+            </div>
             <h1>{product.name}</h1>
             <p>{product.description}</p>
 
             <div className="feature-list">
-              {product.features.map((feature) => <div key={feature}><span><Check size={15} /></span>{feature}</div>)}
+              {product.features.map((feature) => (
+                <div key={feature}>
+                  <span>
+                    <Check size={15} />
+                  </span>
+                  {feature}
+                </div>
+              ))}
             </div>
 
-            <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 22 }}>
-              <Link href="/contact" className="btn btn-orange">REQUEST A QUOTE <ArrowRight size={14} /></Link>
-              <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noreferrer" className="btn" style={{ background: "#128c4a", color: "#fff" }}><MessageCircle size={14} /> WHATSAPP US</a>
+            <div
+              style={{
+                display: "flex",
+                gap: 10,
+                flexWrap: "wrap",
+                marginTop: 22,
+              }}
+            >
+              <Link href="/contact" className="btn btn-orange">
+                REQUEST A QUOTE <ArrowRight size={14} />
+              </Link>
+              <a
+                href={`https://wa.me/${whatsappNumber}`}
+                target="_blank"
+                rel="noreferrer"
+                className="btn"
+                style={{ background: "#128c4a", color: "#fff" }}
+              >
+                <MessageCircle size={14} /> WHATSAPP US
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section product-information" style={{ paddingTop: 45 }}>
+      <section
+        className="section product-information"
+        style={{ paddingTop: 45 }}
+      >
         <div className="container">
-          <div className="section-title" style={{ textAlign: "left", margin: "0 0 25px", maxWidth: 760 }}>
+          <div
+            className="section-title"
+            style={{ textAlign: "left", margin: "0 0 25px", maxWidth: 760 }}
+          >
             <span>PRODUCT INFORMATION</span>
-            <h2>BUILT FOR <span className="orange">PACKAGING REQUIREMENTS</span></h2>
-            <p>Share the required size, material, quantity and application with the Pack India team for available specifications and quotation.</p>
+            <h2>
+              BUILT FOR <span className="orange">PACKAGING REQUIREMENTS</span>
+            </h2>
+            <p>
+              Share the required size, material, quantity and application with
+              the Pack India team for available specifications and quotation.
+            </p>
           </div>
           <div className="service-grid">
-            <div className="service-card"><ShieldCheck className="icon"/><h3>Catalogue Product</h3><p>This item is included in the Pack India product catalogue.</p></div>
-            <div className="service-card"><Truck className="icon"/><h3>Requirement Based</h3><p>Contact the team to discuss the required specifications and quantity.</p></div>
-            <div className="service-card"><PackageCheck className="icon"/><h3>Request a Quote</h3><p>Use the enquiry form or WhatsApp to request pricing and availability.</p></div>
+            <div className="service-card">
+              <ShieldCheck className="icon" />
+              <h3>Catalogue Product</h3>
+              <p>This item is included in the Pack India product catalogue.</p>
+            </div>
+            <div className="service-card">
+              <Truck className="icon" />
+              <h3>Requirement Based</h3>
+              <p>
+                Contact the team to discuss the required specifications and
+                quantity.
+              </p>
+            </div>
+            <div className="service-card">
+              <PackageCheck className="icon" />
+              <h3>Request a Quote</h3>
+              <p>
+                Use the enquiry form or WhatsApp to request pricing and
+                availability.
+              </p>
+            </div>
           </div>
         </div>
       </section>

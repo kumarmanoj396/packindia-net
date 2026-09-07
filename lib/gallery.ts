@@ -16,7 +16,10 @@ export async function uploadedGalleryImages(): Promise<GalleryUpload[]> {
   if (!process.env.BLOB_READ_WRITE_TOKEN) return [];
   try {
     const { blobs } = await list({ prefix: "gallery/" });
-    return blobs.map((blob) => ({ url: blob.url, title: titleFromPathname(blob.pathname) }));
+    return blobs.map((blob) => ({
+      url: blob.url,
+      title: titleFromPathname(blob.pathname),
+    }));
   } catch {
     return [];
   }

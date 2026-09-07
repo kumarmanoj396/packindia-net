@@ -9,7 +9,11 @@ function required(name: string) {
 
 function signature(email: string) {
   const secret = required("ADMIN_SESSION_SECRET");
-  return secret ? createHmac("sha256", secret).update(`packindia:${email}`).digest("base64url") : "";
+  return secret
+    ? createHmac("sha256", secret)
+        .update(`packindia:${email}`)
+        .digest("base64url")
+    : "";
 }
 
 export function validCredentials(email: string, password: string) {
@@ -19,7 +23,11 @@ export function validCredentials(email: string, password: string) {
   const sameEmail = email.trim().toLowerCase() === adminEmail;
   const candidate = Buffer.from(password);
   const expected = Buffer.from(adminPassword);
-  return sameEmail && candidate.length === expected.length && timingSafeEqual(candidate, expected);
+  return (
+    sameEmail &&
+    candidate.length === expected.length &&
+    timingSafeEqual(candidate, expected)
+  );
 }
 
 export function createSession(email: string) {
