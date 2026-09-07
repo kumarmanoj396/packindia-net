@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Phone, Mail, ChevronDown, Menu, X } from "lucide-react";
+import { Phone, Mail, ChevronDown, Download, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 
@@ -13,6 +13,7 @@ const mobileLinks = [
   ["WHY US", "/about#why-us"],
   ["GALLERY", "/gallery"],
   ["CONTACT US", "/contact"],
+  ["DOWNLOAD CATALOGUE", "/pack-india-product-catalogue.pdf"],
 ] as const;
 
 const productLinks = ["Machines", "Paper Products", "Corrugation Box"] as const;
@@ -123,6 +124,7 @@ export default function Header() {
             <Link href="/about#why-us">WHY US</Link>
             <Link href="/gallery">GALLERY</Link>
             <Link href="/contact">CONTACT US</Link>
+            <a className="nav-catalogue-link" href="/pack-india-product-catalogue.pdf" download data-analytics-event="catalogue_download" data-placement="header"><Download size={12} /> CATALOGUE</a>
           </nav>
           <div className="header-actions">
             <ThemeToggle />

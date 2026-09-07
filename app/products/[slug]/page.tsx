@@ -8,6 +8,7 @@ import {
   ShieldCheck,
   Truck,
   PackageCheck,
+  Download,
 } from "lucide-react";
 import ContactCta from "../../../components/ContactCta";
 import { products } from "../../../lib/products";
@@ -104,7 +105,7 @@ export default async function ProductDetail({
                 marginTop: 22,
               }}
             >
-              <Link href={`/contact?product=${encodeURIComponent(product.name)}`} className="btn btn-orange">
+              <Link href={`/contact?product=${encodeURIComponent(product.name)}`} className="btn btn-orange" data-analytics-event="quote_request" data-placement="product_page" data-product-name={product.name}>
                 REQUEST A QUOTE <ArrowRight size={14} />
               </Link>
               <a
@@ -113,9 +114,13 @@ export default async function ProductDetail({
                 rel="noreferrer"
                 className="btn"
                 style={{ background: "#128c4a", color: "#fff" }}
+                data-analytics-event="whatsapp_enquiry"
+                data-placement="product_page"
+                data-product-name={product.name}
               >
                 <MessageCircle size={14} /> WHATSAPP US
               </a>
+              <a href="/pack-india-product-catalogue.pdf" download className="btn btn-outline catalogue-download-button" data-analytics-event="catalogue_download" data-placement="product_page" data-product-name={product.name}><Download size={14} /> DOWNLOAD CATALOGUE</a>
             </div>
           </div>
         </div>

@@ -6,6 +6,7 @@ import "./brand.css";
 import type { Metadata } from "next";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Analytics from "../components/Analytics";
 
 const siteUrl = "https://www.packindia.net";
 
@@ -47,6 +48,7 @@ export const metadata: Metadata = {
       "Packaging materials, flexible packaging products, strapping tools and auto packaging machines.",
   },
   robots: { index: true, follow: true },
+  verification: { google: process.env.GOOGLE_SITE_VERIFICATION },
 };
 
 const organizationSchema = {
@@ -83,6 +85,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <Analytics />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

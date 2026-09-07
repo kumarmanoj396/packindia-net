@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Download } from "lucide-react";
 export default function Footer() {
   return (
     <footer>
@@ -16,6 +17,7 @@ export default function Footer() {
               Packaging products, packing materials and auto packaging machines
               from the Pack India catalogue.
             </p>
+            <a className="footer-catalogue-link" href="/pack-india-product-catalogue.pdf" download data-analytics-event="catalogue_download" data-placement="footer"><Download size={14} /> DOWNLOAD PRODUCT CATALOGUE</a>
           </div>
           <div>
             <h4>QUICK LINKS</h4>

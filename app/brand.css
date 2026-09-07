@@ -68,6 +68,26 @@ nav a:hover,
 .mobile-menu-panel a:hover {
   color: var(--pack-orange);
 }
+.nav-catalogue-link {
+  color: var(--pack-orange) !important;
+  white-space: nowrap;
+}
+.nav-catalogue-link svg {
+  vertical-align: -2px;
+  margin-right: 3px;
+}
+.footer-catalogue-link {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 6px;
+  color: var(--pack-orange) !important;
+  font-weight: 800;
+  margin-top: 12px !important;
+}
+.catalogue-download-button {
+  border-color: var(--pack-orange) !important;
+  color: var(--pack-orange) !important;
+}
 html[data-theme="dark"] nav a {
   color: #fff;
 }
