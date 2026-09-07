@@ -16,7 +16,17 @@ const mobileLinks = [
   ["DOWNLOAD CATALOGUE", "/pack-india-product-catalogue.pdf"],
 ] as const;
 
-const productLinks = ["Machines", "Paper Products", "Corrugation Box"] as const;
+const productLinks = [
+  "Machines",
+  "Paper Products",
+  "Corrugation Box",
+  "Paper",
+  "Board",
+  "Films & Pouches",
+  "Tapes",
+  "Strapping & Tools",
+  "Packaging Machines",
+] as const;
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);

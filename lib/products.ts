@@ -73,7 +73,7 @@ const suppliedProductImages: Record<string, string> = {
 
 function productImage(name: string, category: string) {
   if (suppliedProductImages[name]) return suppliedProductImages[name];
-  if (category === "Paper & Board") {
+  if (category === "Paper" || category === "Board") {
     if (name.toLowerCase().includes("core"))
       return "/product-images/paper-core.png";
     if (name.toLowerCase().includes("tube"))
@@ -113,82 +113,82 @@ const makeProduct = (
 });
 
 const legacyProducts: Product[] = [
-  // Paper, board & core products
+  // Paper core and tube products
   makeProduct(
     "Paper Core",
-    "Paper & Board",
+    "Paper",
     "◉",
     "linear-gradient(135deg,#d6a15f,#8b572d)",
   ),
   makeProduct(
     "Paper Tube",
-    "Paper & Board",
+    "Paper",
     "○",
     "linear-gradient(135deg,#c9975c,#82502d)",
   ),
   makeProduct(
     "Angle Board",
-    "Paper & Board",
+    "Board",
     "◇",
     "linear-gradient(135deg,#d7a86b,#9a6334)",
   ),
   makeProduct(
     "OD Protector",
-    "Paper & Board",
+    "Board",
     "◌",
     "linear-gradient(135deg,#b9864b,#6f4a2d)",
   ),
   makeProduct(
     "Vertical Protection",
-    "Paper & Board",
+    "Board",
     "▣",
     "linear-gradient(135deg,#d9b078,#956037)",
   ),
   makeProduct(
     "ID Protectors",
-    "Paper & Board",
+    "Board",
     "◎",
     "linear-gradient(135deg,#a8b0b5,#596a76)",
   ),
   makeProduct(
     "Self Adhesive Edge Board",
-    "Paper & Board",
+    "Board",
     "▤",
     "linear-gradient(135deg,#d9ad73,#8c5b32)",
   ),
   makeProduct(
     "Angle Board Flat",
-    "Paper & Board",
+    "Board",
     "▰",
     "linear-gradient(135deg,#e1ba83,#9a693d)",
   ),
   makeProduct(
     "Paper Tube Container",
-    "Paper & Board",
+    "Paper",
     "▥",
     "linear-gradient(135deg,#d0a06a,#83502b)",
   ),
   makeProduct(
     "Kraft Paper Tubes with Lid",
-    "Paper & Board",
+    "Paper",
     "◎",
     "linear-gradient(135deg,#d8b17a,#8a5a32)",
   ),
   makeProduct(
     "Packing Container",
-    "Paper & Board",
+    "Paper",
     "▣",
     "linear-gradient(135deg,#c89557,#76502e)",
   ),
   makeProduct(
     "Corrugated Box & Roll, 3 Ply to 9 Ply",
-    "Paper & Board",
+    "Corrugation Box",
     "▤",
     "linear-gradient(135deg,#c98a42,#704724)",
   ),
   makeProduct(
     "Pallets",
-    "Paper & Board",
+    "Corrugation Box",
     "▦",
     "linear-gradient(135deg,#b47b43,#694522)",
   ),
