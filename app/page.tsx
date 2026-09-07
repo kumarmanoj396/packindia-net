@@ -5,6 +5,7 @@ import {
   Clock3,
   HeartHandshake,
   CheckCircle2,
+  MessageCircle,
 } from "lucide-react";
 import SectionTitle from "../components/SectionTitle";
 import ProductCard from "../components/ProductCard";
@@ -56,6 +57,16 @@ export default function Home() {
               <Link href="/products" className="btn btn-orange">
                 OUR PRODUCTS <ArrowRight size={14} />
               </Link>
+              <a
+                href="https://wa.me/918123166638?text=Hello%20Pack%20India%2C%20I%20would%20like%20to%20ask%20about%20your%20packaging%20products."
+                className="btn whatsapp-home"
+                target="_blank"
+                rel="noreferrer"
+                data-analytics-event="whatsapp_enquiry"
+                data-placement="home_hero"
+              >
+                <MessageCircle size={14} /> WHATSAPP US
+              </a>
               <Link href="/contact" className="btn btn-outline">
                 CONTACT US <ArrowRight size={14} />
               </Link>
