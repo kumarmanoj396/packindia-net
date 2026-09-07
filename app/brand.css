@@ -848,6 +848,7 @@ html[data-theme="dark"] .product-card h3 {
   padding: 38px 0;
   font-size: 15px;
 }
+.catalogue-card-body p{margin:7px 0 0;color:var(--muted);font-size:12px;line-height:1.55}.admin-upload{grid-template-columns:repeat(2,minmax(0,1fr))!important}.admin-caption,.admin-upload button{grid-column:1/-1}.admin-image-fields{display:grid!important;gap:8px;padding:12px!important}.admin-image-fields label{display:grid;gap:4px;font-size:10px;font-weight:800;color:var(--heading)}.admin-image-fields input{width:100%;box-sizing:border-box;padding:8px;border:1px solid var(--border);background:var(--surface-soft);color:var(--text);font:inherit}.admin-image-actions{display:flex!important;justify-content:flex-start!important;padding:4px 0 0!important}.admin-image-actions button:first-child{color:var(--pack-green)}@media(max-width:700px){.admin-upload{grid-template-columns:1fr!important}.admin-caption,.admin-upload button{grid-column:auto}}
 
 .product-specifications { background: var(--surface); }
 .product-spec-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }

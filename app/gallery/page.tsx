@@ -9,6 +9,8 @@ export default async function Gallery() {
   const uploadedImages = await uploadedGalleryImages();
   const allImages = uploadedImages.map((image) => ({
     title: image.title,
+    category: image.category,
+    caption: image.caption,
     image: image.url,
     position: "center",
   }));
@@ -50,8 +52,9 @@ export default async function Gallery() {
                     />
                   </div>
                   <div className="catalogue-card-body">
-                    <span>PACK INDIA PRODUCT</span>
+                    <span>{product.category}</span>
                     <h3>{product.title}</h3>
+                    {product.caption && <p>{product.caption}</p>}
                   </div>
                 </article>
               ))}

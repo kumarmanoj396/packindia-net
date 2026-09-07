@@ -2,7 +2,7 @@
 
 import { FormEvent, useEffect, useState } from "react";
 
-type ImageItem = { url: string; title: string };
+type ImageItem = { url: string; pathname: string; title: string; category: string; caption: string; displayOrder: number };
 
 export default function GalleryAdmin() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -56,7 +56,7 @@ export default function GalleryAdmin() {
     if (!response.ok) setMessage(result.error || "Upload failed.");
     else {
       form.reset();
-      setImages((current) => [result.image, ...current]);
+      await refresh();
       setMessage("Image uploaded to the public gallery.");
     }
     setBusy(false);
@@ -73,6 +73,18 @@ export default function GalleryAdmin() {
       setImages((current) => current.filter((image) => image.url !== url));
     else setMessage("Could not remove the image.");
     setBusy(false);
+  }
+  async function save(image: ImageItem) {
+    setBusy(true);
+    setMessage("");
+    const response = await fetch("/api/admin/gallery", { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify(image) });
+    const result = await response.json();
+    if (!response.ok) setMessage(result.error || "Could not save image details.");
+    else { setImages((current) => current.map((item) => item.url === image.url ? { ...item, ...result.image } : item)); setMessage("Gallery details saved."); }
+    setBusy(false);
+  }
+  function update(url: string, field: keyof ImageItem, value: string | number) {
+    setImages((current) => current.map((image) => image.url === url ? { ...image, [field]: value } : image));
   }
   async function logout() {
     await fetch("/api/admin/logout", { method: "POST" });
@@ -130,11 +142,10 @@ export default function GalleryAdmin() {
             <span className="eyebrow">PACK INDIA ADMIN</span>
             <h1>Gallery Manager</h1>
             <p>
-              Upload JPG, PNG, or WebP files up to 10 MB. Uploaded images appear
-              automatically in the public Gallery.
+              Upload JPG, PNG, or WebP files up to 10 MB. Add details and choose the order in which photos appear publicly.
             </p>
           </div>
-          <button className="text-link" onClick={logout}>
+          <button className="text-link" type="button" onClick={logout}>
             SIGN OUT
           </button>
         </div>
@@ -147,6 +158,9 @@ export default function GalleryAdmin() {
               required
             />
           </label>
+          <label>Product category<input name="category" placeholder="Example: Paper Products" required /></label>
+          <label>Display order<input name="displayOrder" type="number" min="0" defaultValue="999" required /></label>
+          <label className="admin-caption">Caption (optional)<input name="caption" placeholder="Short description for visitors" /></label>
           <label>
             Image file
             <input
@@ -166,11 +180,12 @@ export default function GalleryAdmin() {
             images.map((image) => (
               <article key={image.url}>
                 <img src={image.url} alt={image.title} />
-                <div>
-                  <b>{image.title}</b>
-                  <button onClick={() => remove(image.url)} disabled={busy}>
-                    REMOVE
-                  </button>
+                <div className="admin-image-fields">
+                  <label>Title<input value={image.title} onChange={(event) => update(image.url, "title", event.target.value)} /></label>
+                  <label>Category<input value={image.category} onChange={(event) => update(image.url, "category", event.target.value)} /></label>
+                  <label>Order<input type="number" min="0" value={image.displayOrder} onChange={(event) => update(image.url, "displayOrder", Number(event.target.value))} /></label>
+                  <label>Caption<input value={image.caption} onChange={(event) => update(image.url, "caption", event.target.value)} /></label>
+                  <div className="admin-image-actions"><button type="button" onClick={() => save(image)} disabled={busy}>SAVE</button><button type="button" onClick={() => remove(image.url)} disabled={busy}>REMOVE</button></div>
                 </div>
               </article>
             ))
