@@ -47,6 +47,20 @@ const suppliedProductImages: Record<string, string> = {
   "VCI Film": "/product-images/catalog/vci-film.png",
   "VCI Bag": "/product-images/catalog/vci-film.png",
   "Zip Lock": "/product-images/catalog/pvc-pouches.png",
+  "Angle Board Machine": "/product-images/packing-machine.png",
+  "Edge Board Machine": "/product-images/packing-machine.png",
+  "Edge Protector Machine": "/product-images/packing-machine.png",
+  "OD Punching Machine": "/product-images/packing-machine.png",
+  "Paper Core Machine": "/product-images/packing-machine.png",
+  "V-Cut Paper Edge Protector": "/product-images/catalog/angle-board-flat.png",
+  "Paper Edge Protector": "/product-images/catalog/vertical-protection.png",
+  "Paper Angle Edge Protector": "/product-images/catalog/angle-board.png",
+  "High-Strength Laminated Edge Board": "/product-images/catalog/angle-board.png",
+  "Spiral Edge Protector": "/product-images/catalog/vertical-protection.png",
+  "Paper Edge Protector Covers": "/product-images/catalog/vertical-protection.png",
+  "Box": "/product-images/catalog/corrugated-box.png",
+  "Two-ply Rolls": "/product-images/catalog/corrugated-box.png",
+  "Three-ply Rolls": "/product-images/catalog/corrugated-box.png",
 };
 
 function productImage(name: string, category: string) {
@@ -74,7 +88,7 @@ const makeProduct = (name: string, category: string, icon: string, gradient: str
   image: productImage(name, category),
 });
 
-export const products: Product[] = [
+const legacyProducts: Product[] = [
   // Paper, board & core products
   makeProduct("Paper Core", "Paper & Board", "◉", "linear-gradient(135deg,#d6a15f,#8b572d)"),
   makeProduct("Paper Tube", "Paper & Board", "○", "linear-gradient(135deg,#c9975c,#82502d)"),
@@ -161,4 +175,22 @@ export const products: Product[] = [
   makeProduct("Auto and Manual Machines", "Packaging Machines", "▣", "linear-gradient(135deg,#657f8d,#2e4855)"),
   makeProduct("PET Roll Dispenser", "Packaging Machines", "▱", "linear-gradient(135deg,#cf7d39,#75451f)"),
   makeProduct("Stretch Wrap Dispenser", "Packaging Machines", "▱", "linear-gradient(135deg,#5e8292,#314c58)"),
+];
+
+export const products: Product[] = [
+  makeProduct("Angle Board Machine", "Machines", "▣", "linear-gradient(135deg,#5d9ac2,#274c6b)"),
+  makeProduct("Edge Board Machine", "Machines", "▣", "linear-gradient(135deg,#5d9ac2,#274c6b)"),
+  makeProduct("Edge Protector Machine", "Machines", "▣", "linear-gradient(135deg,#5d9ac2,#274c6b)"),
+  makeProduct("OD Punching Machine", "Machines", "▣", "linear-gradient(135deg,#5d9ac2,#274c6b)"),
+  makeProduct("Paper Core Machine", "Machines", "▣", "linear-gradient(135deg,#5d9ac2,#274c6b)"),
+  makeProduct("Angle Board", "Paper Products", "◇", "linear-gradient(135deg,#d7a86b,#9a6334)"),
+  makeProduct("V-Cut Paper Edge Protector", "Paper Products", "▰", "linear-gradient(135deg,#e1ba83,#9a693d)"),
+  makeProduct("Paper Edge Protector", "Paper Products", "▣", "linear-gradient(135deg,#d9b078,#956037)"),
+  makeProduct("Paper Angle Edge Protector", "Paper Products", "◇", "linear-gradient(135deg,#d7a86b,#9a6334)"),
+  makeProduct("High-Strength Laminated Edge Board", "Paper Products", "▤", "linear-gradient(135deg,#d9ad73,#8c5b32)"),
+  makeProduct("Spiral Edge Protector", "Paper Products", "▣", "linear-gradient(135deg,#d9b078,#956037)"),
+  makeProduct("Paper Edge Protector Covers", "Paper Products", "▣", "linear-gradient(135deg,#d9b078,#956037)"),
+  makeProduct("Box", "Corrugation Box", "▤", "linear-gradient(135deg,#c98a42,#704724)"),
+  makeProduct("Two-ply Rolls", "Corrugation Box", "▤", "linear-gradient(135deg,#c98a42,#704724)"),
+  makeProduct("Three-ply Rolls", "Corrugation Box", "▤", "linear-gradient(135deg,#c98a42,#704724)"),
 ];

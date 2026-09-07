@@ -15,7 +15,7 @@ const mobileLinks = [
   ["CONTACT US", "/contact"],
 ] as const;
 
-const productLinks = ["Paper & Board", "Films & Pouches", "Tapes", "Strapping & Tools", "Packaging Machines"] as const;
+const productLinks = ["Machines", "Paper Products", "Corrugation Box"] as const;
 
 export default function Header(){
   const [menuOpen, setMenuOpen] = useState(false);
