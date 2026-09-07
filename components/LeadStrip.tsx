@@ -1,2 +1,29 @@
 import { Award, Users, Boxes, Truck } from "lucide-react";
-export default function LeadStrip(){return <section className="lead-strip"><div className="container lead-grid"><div><Award/><b>10+</b><span>YEARS OF EXPERIENCE</span></div><div><Users/><b>500+</b><span>HAPPY CLIENTS</span></div><div><Boxes/><b>1000+</b><span>PRODUCTS</span></div><div><Truck/><b>ON TIME</b><span>DELIVERY</span></div></div></section>}
+export default function LeadStrip() {
+  return (
+    <section className="lead-strip">
+      <div className="container lead-grid">
+        <div>
+          <Award />
+          <b>10+</b>
+          <span>YEARS OF EXPERIENCE</span>
+        </div>
+        <div>
+          <Users />
+          <b>500+</b>
+          <span>HAPPY CLIENTS</span>
+        </div>
+        <div>
+          <Boxes />
+          <b>1000+</b>
+          <span>PRODUCTS</span>
+        </div>
+        <div>
+          <Truck />
+          <b>ON TIME</b>
+          <span>DELIVERY</span>
+        </div>
+      </div>
+    </section>
+  );
+}
