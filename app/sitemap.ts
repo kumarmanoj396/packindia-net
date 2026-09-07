@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { products } from "../lib/products";
 
-const siteUrl = "https://packindia-net.vercel.app";
+const siteUrl = "https://www.packindia.net";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [

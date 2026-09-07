@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-const siteUrl = "https://packindia-net.vercel.app";
+const siteUrl = "https://www.packindia.net";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

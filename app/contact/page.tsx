@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import {
   Mail,
   MapPin,
@@ -11,11 +11,20 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import ContactCta from "../../components/ContactCta";
+import { products } from "../../lib/products";
 
 const whatsappNumber = "918123166638";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState("");
+
+  useEffect(() => {
+    const product = new URLSearchParams(window.location.search).get("product");
+    if (product && products.some((item) => item.name === product)) {
+      setSelectedProduct(product);
+    }
+  }, []);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -139,21 +148,12 @@ export default function Contact() {
               type="tel"
               required
             />
-            <select
-              name="product"
-              defaultValue=""
-              required
-              aria-label="Select Product"
-            >
+            <select name="product" value={selectedProduct} onChange={(event) => setSelectedProduct(event.target.value)} required aria-label="Select Product">
               <option value="" disabled>
                 Select Product *
               </option>
-              <option>Paper & Board</option>
-              <option>Films & Pouches</option>
-              <option>Tapes</option>
-              <option>Strapping & Tools</option>
-              <option>Packaging Machines</option>
-              <option>Other Catalogue Requirement</option>
+              {products.map((item) => <option key={item.slug} value={item.name}>{item.name}</option>)}
+              <option value="Other Catalogue Requirement">Other Catalogue Requirement</option>
             </select>
             <input
               name="quantity"
