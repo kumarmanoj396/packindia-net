@@ -177,7 +177,7 @@ const legacyProducts: Product[] = [
   makeProduct("Stretch Wrap Dispenser", "Packaging Machines", "▱", "linear-gradient(135deg,#5e8292,#314c58)"),
 ];
 
-export const products: Product[] = [
+const priorityProducts: Product[] = [
   makeProduct("Angle Board Machine", "Machines", "▣", "linear-gradient(135deg,#5d9ac2,#274c6b)"),
   makeProduct("Edge Board Machine", "Machines", "▣", "linear-gradient(135deg,#5d9ac2,#274c6b)"),
   makeProduct("Edge Protector Machine", "Machines", "▣", "linear-gradient(135deg,#5d9ac2,#274c6b)"),
@@ -193,4 +193,13 @@ export const products: Product[] = [
   makeProduct("Box", "Corrugation Box", "▤", "linear-gradient(135deg,#c98a42,#704724)"),
   makeProduct("Two-ply Rolls", "Corrugation Box", "▤", "linear-gradient(135deg,#c98a42,#704724)"),
   makeProduct("Three-ply Rolls", "Corrugation Box", "▤", "linear-gradient(135deg,#c98a42,#704724)"),
+];
+
+// Preserve the requested ordering first, then retain the established catalogue
+// afterwards, including Paper Core, Paper Tube and all other existing products.
+export const products: Product[] = [
+  ...priorityProducts,
+  ...legacyProducts.filter(
+    (product) => !priorityProducts.some((priority) => priority.name === product.name),
+  ),
 ];
