@@ -12,6 +12,7 @@ import ProductCard from "../components/ProductCard";
 import LeadStrip from "../components/LeadStrip";
 import ContactCta from "../components/ContactCta";
 import PackagingProcess from "../components/PackagingProcess";
+import ProductDepthViewer from "../components/ProductDepthViewer";
 import Reveal from "../components/Reveal";
 import { products } from "../lib/products";
 
@@ -196,6 +197,7 @@ export default function Home() {
         </Reveal>
       </section>
       <PackagingProcess />
+      <ProductDepthViewer />
       <ContactCta />
     </main>
   );
