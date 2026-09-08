@@ -15,9 +15,26 @@ import { products } from "../../lib/products";
 
 const whatsappNumber = "918123166638";
 
+const enquiryOptions = [
+  {
+    label: "Get Quotation",
+    message: "Could you please send me a quotation for the items listed below?",
+  },
+  {
+    label: "Get Price List",
+    message: "Could you please share your latest price list for the products I need?",
+  },
+  {
+    label: "Discuss Requirement",
+    message: "I would like to discuss my packaging requirement with your team.",
+  },
+];
+
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState("");
+  const [selectedEnquiry, setSelectedEnquiry] = useState("");
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     const product = new URLSearchParams(window.location.search).get("product");
@@ -54,6 +71,8 @@ export default function Contact() {
       "noopener,noreferrer",
     );
     form.reset();
+    setSelectedEnquiry("");
+    setMessage("");
   }
 
   return (
@@ -134,11 +153,27 @@ export default function Contact() {
           <form className="form contact-form" onSubmit={handleSubmit}>
             <div className="form-heading">
               <span>QUICK ENQUIRY</span>
-              <h3>SEND US A MESSAGE</h3>
+              <h3>HOW CAN WE HELP?</h3>
               <p>
                 Share your requirement and we'll open a ready-to-send WhatsApp
                 enquiry.
               </p>
+            </div>
+            <div className="enquiry-options" aria-label="Choose enquiry type">
+              {enquiryOptions.map((option) => (
+                <button
+                  className={`enquiry-option${selectedEnquiry === option.label ? " is-selected" : ""}`}
+                  key={option.label}
+                  type="button"
+                  onClick={() => {
+                    setSelectedEnquiry(option.label);
+                    setMessage(option.message);
+                    setSubmitted(false);
+                  }}
+                >
+                  {option.label}
+                </button>
+              ))}
             </div>
             <input name="name" placeholder="Your Name *" required />
             <input name="email" placeholder="Your Email" type="email" />
@@ -162,6 +197,8 @@ export default function Contact() {
             <textarea
               name="message"
               placeholder="Tell us your size, material, application or other requirement *"
+              value={message}
+              onChange={(event) => setMessage(event.target.value)}
               required
             />
             <button className="btn btn-orange" type="submit">
@@ -265,6 +302,31 @@ export default function Contact() {
           color: var(--muted);
           margin: 0 0 7px;
         }
+        .enquiry-options {
+          grid-column: 1/-1;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+          margin: -1px 0 3px;
+        }
+        .enquiry-option {
+          width: auto !important;
+          border: 1px solid var(--border) !important;
+          border-radius: 999px;
+          background: var(--surface) !important;
+          color: var(--heading) !important;
+          padding: 9px 13px !important;
+          font: 800 11px/1 Arial, sans-serif !important;
+          cursor: pointer;
+          transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+        }
+        .enquiry-option:hover,
+        .enquiry-option.is-selected {
+          background: var(--pack-orange) !important;
+          border-color: var(--pack-orange) !important;
+          color: #fff !important;
+          transform: translateY(-1px);
+        }
         .contact-form input,
         .contact-form textarea,
         .contact-form select {
@@ -281,7 +343,7 @@ export default function Contact() {
         .contact-form textarea {
           min-height: 120px;
         }
-        .contact-form button {
+        .contact-form > button.btn {
           grid-column: 1/-1;
         }
         .form-success {
