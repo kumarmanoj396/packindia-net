@@ -1,4 +1,7 @@
+"use client";
+
 import { ClipboardList, PackageCheck, SearchCheck, Truck } from "lucide-react";
+import { useState } from "react";
 import Reveal from "./Reveal";
 
 const steps = [
@@ -25,6 +28,8 @@ const steps = [
 ];
 
 export default function PackagingProcess() {
+  const [activeStep, setActiveStep] = useState<number | null>(null);
+
   return (
     <section className="section packaging-process">
       <Reveal className="container">
@@ -37,12 +42,20 @@ export default function PackagingProcess() {
         </div>
         <div className="process-steps">
           {steps.map((step, index) => (
-            <article className={`process-step process-step-${index + 1}`} key={step.title}>
+            <button
+              className={`process-step process-step-${index + 1}${activeStep === index ? " is-active" : ""}`}
+              key={step.title}
+              type="button"
+              onClick={() => setActiveStep(index)}
+              onPointerEnter={() => setActiveStep(index)}
+              onFocus={() => setActiveStep(index)}
+              aria-pressed={activeStep === index}
+            >
               <div className="process-number">0{index + 1}</div>
               <div className="process-icon">{step.icon}</div>
               <h3>{step.title}</h3>
               <p>{step.text}</p>
-            </article>
+            </button>
           ))}
         </div>
       </Reveal>
