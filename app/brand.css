@@ -94,6 +94,16 @@ html[data-theme="dark"] nav a {
 html[data-theme="dark"] nav a:hover {
   color: var(--pack-orange);
 }
+
+/* Larger, more readable site navigation */
+.topbar { font-size: 14px; }
+nav a,
+.products-menu-link,
+.products-menu-toggle {
+  font-size: 13px;
+  font-weight: 800;
+}
+.nav-catalogue-link svg { width: 15px; height: 15px; }
 .products-menu {
   position: relative;
   display: flex;
@@ -105,7 +115,7 @@ html[data-theme="dark"] nav a:hover {
   border: 0;
   background: transparent;
   color: #21216c;
-  font: 700 10px Arial;
+  font: 800 13px Arial;
   letter-spacing: 0.15px;
   padding: 0;
   display: flex;
@@ -452,6 +462,11 @@ html[data-theme="dark"] .product-card h3 {
 .footer-bottom {
   border-top: 4px solid var(--pack-orange);
 }
+.footer-grid h4 { font-size: 14px; letter-spacing: .2px; }
+.footer-grid p,
+.footer-grid a { font-size: 14px; line-height: 1.6; }
+.footer-contact .footer-address { margin: 7px 0 12px; }
+.footer-contact a { margin: 5px 0; }
 .promise-grid {
   display: grid;
   grid-template-columns: 1.1fr 1fr;

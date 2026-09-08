@@ -35,26 +35,20 @@ export default function Footer() {
             <Link href="/products">Strapping & Tools</Link>
             <Link href="/products">Packaging Machines</Link>
           </div>
-          <div>
+          <div className="footer-contact">
             <h4>CONTACT INFO</h4>
-            <p>
+            <p className="footer-address">
               Sy No.117/4, Dodda Hullur Village, Kasaba Hobli, Hoskote,
               Bengaluru - 562114.
             </p>
-            <p>
-              <a href="tel:+918123166638">+91 81231 66638</a>
-              <br />
-              <a href="tel:+919844723888">+91 98447 23888</a>
-            </p>
-            <p>
-              <a href="mailto:sales.packindia@gmail.com">
-                sales.packindia@gmail.com
-              </a>
-              <br />
-              <a href="mailto:packindia1991@gmail.com">
-                packindia1991@gmail.com
-              </a>
-            </p>
+            <a href="tel:+918123166638">+91 81231 66638</a>
+            <a href="tel:+919844723888">+91 98447 23888</a>
+            <a href="mailto:sales.packindia@gmail.com">
+              sales.packindia@gmail.com
+            </a>
+            <a href="mailto:packindia1991@gmail.com">
+              packindia1991@gmail.com
+            </a>
           </div>
         </div>
       </div>
