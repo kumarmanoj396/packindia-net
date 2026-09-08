@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Check, X } from "lucide-react";
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import type { Product } from "../lib/products";
 
 export default function ProductCard({ product }: { product: Product }) {
@@ -27,7 +28,7 @@ export default function ProductCard({ product }: { product: Product }) {
         </div>
       </div>
 
-      {isQuickViewOpen && (
+      {isQuickViewOpen && createPortal(
         <div className="quick-view-backdrop" role="presentation" onMouseDown={() => setIsQuickViewOpen(false)}>
           <section className="quick-view-dialog" role="dialog" aria-modal="true" aria-labelledby={`quick-view-${product.slug}`} onMouseDown={(event) => event.stopPropagation()}>
             <button className="quick-view-close" type="button" onClick={() => setIsQuickViewOpen(false)} aria-label="Close quick view">
@@ -50,7 +51,7 @@ export default function ProductCard({ product }: { product: Product }) {
             </div>
           </section>
         </div>
-      )}
+      , document.body)}
     </article>
   );
 }
