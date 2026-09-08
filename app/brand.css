@@ -102,6 +102,7 @@ nav a,
 .products-menu-toggle {
   font-size: 13px;
   font-weight: 800;
+  white-space: nowrap;
 }
 .nav-catalogue-link svg { width: 15px; height: 15px; }
 .products-menu {
