@@ -11,6 +11,7 @@ import SectionTitle from "../components/SectionTitle";
 import ProductCard from "../components/ProductCard";
 import LeadStrip from "../components/LeadStrip";
 import ContactCta from "../components/ContactCta";
+import PackagingProcess from "../components/PackagingProcess";
 import Reveal from "../components/Reveal";
 import { products } from "../lib/products";
 
@@ -194,6 +195,7 @@ export default function Home() {
           </div>
         </Reveal>
       </section>
+      <PackagingProcess />
       <ContactCta />
     </main>
   );

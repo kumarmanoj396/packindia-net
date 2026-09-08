@@ -860,6 +860,11 @@ html[data-theme="dark"] .product-card h3 {
 @media(max-width:600px){.gallery-lightbox{padding:12px}.gallery-lightbox-content>img{max-height:calc(100vh - 145px)}.lightbox-arrow{width:36px;height:45px}.lightbox-caption{padding:11px 14px}.lightbox-caption b{font-size:15px}}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.product-image,.catalogue-image img,.btn{transition:none}}
 
+/* Hero entrance and enquiry-to-delivery process */
+.hero-copy{animation:hero-copy-in .68s cubic-bezier(.2,.75,.25,1) both}.hero-machine{animation:hero-machine-in .82s cubic-bezier(.2,.75,.25,1) .08s both}@keyframes hero-copy-in{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}@keyframes hero-machine-in{from{opacity:0;transform:translateX(48px)}to{opacity:1;transform:translateX(0)}}
+.packaging-process{background:var(--surface-soft)}.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative}.process-steps:before{content:"";position:absolute;top:38px;left:12%;right:12%;height:1px;background:var(--border)}.process-steps article{position:relative;z-index:1;background:var(--surface);border:1px solid var(--border);padding:25px 20px 22px}.process-number{position:absolute;right:15px;top:12px;color:var(--pack-orange);font-weight:800;font-size:11px;letter-spacing:1px}.process-icon{width:54px;height:54px;display:grid;place-items:center;background:var(--surface-soft);color:var(--pack-orange);border:1px solid var(--border);margin-bottom:18px}.process-icon svg{width:24px;height:24px}.process-steps h3{margin:0;color:var(--heading);font-size:13px}.process-steps p{margin:9px 0 0;color:var(--muted);font-size:12px;line-height:1.65}@media(max-width:800px){.process-steps{grid-template-columns:repeat(2,1fr)}.process-steps:before{display:none}}@media(max-width:520px){.process-steps{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.hero-copy,.hero-machine{animation:none}}
+
 .product-specifications { background: var(--surface); }
 .product-spec-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
 .product-spec-grid > div { padding: 20px; border: 1px solid var(--border); background: var(--surface-soft); }
