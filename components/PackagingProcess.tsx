@@ -37,7 +37,7 @@ export default function PackagingProcess() {
         </div>
         <div className="process-steps">
           {steps.map((step, index) => (
-            <article key={step.title}>
+            <article className={`process-step process-step-${index + 1}`} key={step.title}>
               <div className="process-number">0{index + 1}</div>
               <div className="process-icon">{step.icon}</div>
               <h3>{step.title}</h3>
