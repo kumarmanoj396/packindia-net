@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import ContactCta from "../../components/ContactCta";
+import GalleryLightbox from "../../components/GalleryLightbox";
 import { uploadedGalleryImages } from "../../lib/gallery";
 
 export const dynamic = "force-dynamic";
@@ -37,28 +38,7 @@ export default async function Gallery() {
             </p>
           </div>
           {allImages.length ? (
-            <div className="catalogue-gallery">
-              {allImages.map((product, index) => (
-                <article
-                  className="catalogue-card"
-                  key={`${product.title}-${index}`}
-                >
-                  <div className="catalogue-image">
-                    <img
-                      src={product.image}
-                      alt={product.title}
-                      loading="lazy"
-                      style={{ objectPosition: product.position }}
-                    />
-                  </div>
-                  <div className="catalogue-card-body">
-                    <span>{product.category}</span>
-                    <h3>{product.title}</h3>
-                    {product.caption && <p>{product.caption}</p>}
-                  </div>
-                </article>
-              ))}
-            </div>
+            <GalleryLightbox images={allImages} />
           ) : (
             <p className="gallery-empty">
               Our Gallery is being updated. Please check back soon.

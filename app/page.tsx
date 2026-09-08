@@ -11,6 +11,7 @@ import SectionTitle from "../components/SectionTitle";
 import ProductCard from "../components/ProductCard";
 import LeadStrip from "../components/LeadStrip";
 import ContactCta from "../components/ContactCta";
+import Reveal from "../components/Reveal";
 import { products } from "../lib/products";
 
 export default function Home() {
@@ -88,7 +89,7 @@ export default function Home() {
         className="section product-section"
         style={{ paddingTop: "54px" }}
       >
-        <div className="container">
+        <Reveal className="container">
           <SectionTitle
             eyebrow="PACKAGING PRODUCTS"
             title={
@@ -108,11 +109,11 @@ export default function Home() {
               VIEW COMPLETE CATALOGUE <ArrowRight size={14} />
             </Link>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section className="section about-home" id="about-home">
-        <div className="container about-home-grid">
+        <Reveal className="container about-home-grid">
           <div className="about-visual">
             <div className="about-logo-panel">
               <img src="/packindia-logo-lockup.png" alt="Pack India" />
@@ -156,12 +157,12 @@ export default function Home() {
               MORE ABOUT US <ArrowRight size={14} />
             </Link>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <LeadStrip />
       <section className="section" id="gallery">
-        <div className="container">
+        <Reveal className="container">
           <SectionTitle
             eyebrow="OUR WORK"
             title={
@@ -191,7 +192,7 @@ export default function Home() {
               </Link>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
       <ContactCta />
     </main>

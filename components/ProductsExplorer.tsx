@@ -55,7 +55,7 @@ function ProductsExplorerContent() {
               {visibleProducts.length === 1 ? "product" : "products"}
             </p>
           </div>
-          <div className="products-grid products-grid-inner">
+          <div className="products-grid products-grid-inner" key={active}>
             {visibleProducts.map((product) => (
               <ProductCard key={product.slug} product={product} />
             ))}
@@ -145,6 +145,11 @@ function ProductsExplorerContent() {
         .products-grid-inner {
           grid-template-columns: repeat(3, 1fr) !important;
           gap: 14px !important;
+          animation: products-in 0.28s ease both;
+        }
+        @keyframes products-in {
+          from { opacity: 0; transform: translateY(8px); }
+          to { opacity: 1; transform: translateY(0); }
         }
         @media (max-width: 900px) {
           .products-explorer {
