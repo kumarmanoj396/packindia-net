@@ -11,10 +11,10 @@ const comparisonRows = [
 ];
 
 const strengths = [
-  { icon: MapPin, title: "Strategic Industrial Location", text: "Situated in Hoskote, Bengaluru's industrial cluster, supporting freight dispatch across Karnataka, Tamil Nadu, and Andhra Pradesh." },
-  { icon: ShieldCheck, title: "High-Strength Structural Integrity", text: "Multi-layer lamination and moisture-resistant adhesives help deliver dependable vertical compression strength for demanding loads." },
-  { icon: Recycle, title: "Recyclable Kraft Solutions", text: "Edge boards, protectors, and paper cores are made with eco-friendly kraft-paper options for practical export and transit packaging." },
-  { icon: Factory, title: "End-to-End Packaging Capability", text: "From finished consumable packaging to machinery for board production, Pack India supports the complete operating requirement." },
+  { icon: MapPin, title: "Strategic Industrial Location", text: "Situated in Hoskote, Bengaluru's primary industrial cluster, enabling rapid same-day or next-day freight dispatch across Karnataka, Tamil Nadu, and Andhra Pradesh." },
+  { icon: ShieldCheck, title: "High-Strength Structural Integrity", text: "Multi-layer lamination bonded with moisture-resistant adhesives delivers superior vertical compression strength, helping prevent pallet crush under double-stacked container loads." },
+  { icon: Recycle, title: "100% Recyclable & Sustainable", text: "All edge boards, protectors and paper cores are manufactured using 100% eco-friendly, biodegradable kraft paper compliant with export phytosanitary standards (ISPM-15 exempt)." },
+  { icon: Factory, title: "End-to-End Packaging Capability", text: "Whether you require finished consumable packaging delivered to your loading dock or automated machinery to manufacture boards in-house, we supply the complete operational ecosystem." },
 ];
 
 export default function WhyUs() {
@@ -25,7 +25,7 @@ export default function WhyUs() {
           <div className="breadcrumbs">Home → Why Us</div>
           <span className="eyebrow">THE PACK INDIA DIFFERENCE</span>
           <h1>ENGINEERED FOR LOAD STABILITY. BUILT FOR RELIABILITY.</h1>
-          <p>Why manufacturers and logistics teams choose Pack India for dependable packaging materials and machinery support.</p>
+          <p>Why leading manufacturers and logistics hubs choose Pack India over generic traders and intermediaries.</p>
         </div>
       </section>
 
@@ -60,7 +60,7 @@ export default function WhyUs() {
 
       <section className="custom-requirement-cta">
         <div className="container custom-requirement-inner">
-          <div><span className="eyebrow">CUSTOM PACKAGING SUPPORT</span><h2>HAVE A NON-STANDARD PALLET SIZE OR CUSTOM MACHINE REQUIREMENT?</h2><p>Send your dimensional drawings or pallet specifications to the Pack India team for feasibility review and a cost estimate.</p></div>
+          <div><span className="eyebrow">CUSTOM PACKAGING SUPPORT</span><h2>HAVE A NON-STANDARD PALLET SIZE OR CUSTOM MACHINE REQUIREMENT?</h2><p>Send your dimensional drawings or pallet specifications to our engineering desk for a same-day feasibility review and cost estimate.</p></div>
           <div className="custom-requirement-actions"><Link href="/contact" className="btn btn-orange">REQUEST CUSTOM QUOTE <ArrowRight size={14} /></Link><a href="https://wa.me/918123166638?text=Hello%20Pack%20India%2C%20I%20would%20like%20to%20discuss%20a%20custom%20packaging%20requirement." target="_blank" rel="noreferrer">CHAT ON WHATSAPP</a></div>
         </div>
       </section>

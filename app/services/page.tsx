@@ -3,11 +3,9 @@ import {
   ArrowRight,
   CheckCircle2,
   Clock3,
-  Leaf,
   MessageCircle,
   PackageCheck,
   ShieldCheck,
-  Truck,
 } from "lucide-react";
 import SectionTitle from "../../components/SectionTitle";
 import ContactCta from "../../components/ContactCta";
@@ -15,33 +13,27 @@ import ContactCta from "../../components/ContactCta";
 const services = [
   {
     icon: PackageCheck,
-    title: "Custom Packaging",
-    text: "Practical packaging solutions tailored to your product, handling and protection requirements.",
-  },
-  {
-    icon: Truck,
-    title: "On-Time Delivery",
-    text: "Planned and dependable delivery support to help keep your packaging supply on schedule.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Quality Assurance",
-    text: "Quality-focused product selection and checks to maintain consistent packaging performance.",
-  },
-  {
-    icon: Leaf,
-    title: "Eco-Friendly Solutions",
-    text: "Packaging options designed to support recyclable and more sustainable business practices.",
+    title: "Custom Sizing & Profile Slitting",
+    text: "Tailored edge protection and paper cores engineered for exact pallet dimensions, load tolerances and container requirements.",
+    points: ["Leg dimensions: 25 × 25 mm to 100 × 100 mm", "Thickness: 2 mm to 8 mm multi-ply kraft", "Precision cut lengths: 50 mm to 6,000 mm", "Equal leg, unequal leg, U-profile and V-cut options"],
   },
   {
     icon: CheckCircle2,
-    title: "Packaging Consultation",
-    text: "Guidance on choosing the right packaging product, size and application for your requirement.",
+    title: "Branded & Custom Printing",
+    text: "Turn protective transit packaging into a professional brand asset and a clear handling indicator.",
+    points: ["Single-colour and multi-colour inline logo printing", "Handling warnings: Fragile, Do Not Double Stack, This Side Up", "Lot numbering and traceability marks", "Water-repellent coatings for sea cargo and cold chain"],
+  },
+  {
+    icon: ShieldCheck,
+    title: "Machine Installation & Commissioning",
+    text: "Turnkey installation and technician onboarding for converters investing in Pack India machinery.",
+    points: ["Mechanical leveling, electrical integration and sensor setup", "Dry runs, test production and yield optimisation", "Operator training for safety, blade alignment and routine cleaning", "Operating manuals and spare-part charts"],
   },
   {
     icon: Clock3,
-    title: "Responsive Support",
-    text: "Clear communication from enquiry through product selection, quotation and delivery coordination.",
+    title: "OEM Spare Parts & Maintenance (AMC)",
+    text: "Minimise production downtime with direct engineering support from Pack India’s Bengaluru facility.",
+    points: ["Rapid-dispatch spares: blades, cutters, rollers, mandrel sleeves and drive belts", "Preventative calibration and multi-point wear inspections", "Dedicated technician visits across Hoskote and Karnataka", "Emergency on-site support for critical breakdown lines"],
   },
 ];
 
@@ -93,14 +85,15 @@ export default function Services() {
           />
 
           <div className="service-grid">
-            {services.map(({ icon: Icon, title, text }) => (
+            {services.map(({ icon: Icon, title, text, points }, index) => (
               <article className="service-card service-card-enhanced" key={title}>
-                <span className="service-card-number">{String(services.findIndex((service) => service.title === title) + 1).padStart(2, "0")}</span>
+                <span className="service-card-number">{String(index + 1).padStart(2, "0")}</span>
                 <div className="icon">
                   <Icon size={25} />
                 </div>
                 <h3>{title}</h3>
                 <p>{text}</p>
+                <ul className="service-detail-list">{points.map((point) => <li key={point}><CheckCircle2 size={13} />{point}</li>)}</ul>
                 <Link href="/contact" className="service-card-link">
                   DISCUSS YOUR REQUIREMENT <ArrowRight size={12} />
                 </Link>
@@ -145,9 +138,9 @@ export default function Services() {
                 maxWidth: 600,
               }}
             >
-              We focus on quality products, practical recommendations and
-              reliable service so your packaging requirement is handled with
-              less friction.
+              From precision custom dimensions to full machinery setup and
+              after-sales support across South India, Pack India keeps every
+              packaging requirement practical and customer-focused.
             </p>
             <Link
               href="/contact"

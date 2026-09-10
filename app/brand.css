@@ -1116,10 +1116,13 @@ html[data-theme="dark"] .quick-view-image { background: #fff; }
 .service-support-step b { color: var(--pack-orange); font-size: 13px; }
 .service-support-step p { margin: 0; color: #fff; font: 800 13px Arial, sans-serif; }
 .service-support-step svg { color: var(--pack-orange); }
-.service-card-enhanced { position: relative; overflow: hidden; min-height: 220px; padding: 27px 24px 23px; }
+.service-card-enhanced { position: relative; overflow: hidden; min-height: 390px; padding: 27px 24px 23px; }
 .service-card-enhanced .icon { width: 48px; height: 48px; border: 1px solid var(--border); border-radius: 50%; display: grid; place-items: center; margin-bottom: 17px; background: var(--surface-soft); }
 .service-card-enhanced h3 { font-size: 16px; margin: 0 0 8px; }
 .service-card-enhanced p { min-height: 54px; }
+.service-detail-list { display: grid; gap: 7px; padding: 0; margin: 16px 0 0; list-style: none; }
+.service-detail-list li { display: flex; align-items: flex-start; gap: 7px; color: var(--muted); font-size: 11px; line-height: 1.4; }
+.service-detail-list li svg { flex: none; margin-top: 1px; color: var(--pack-orange); }
 .service-card-number { position: absolute; top: 17px; right: 18px; color: var(--border); font: 800 28px/1 Arial, sans-serif; }
 .service-card-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 11px; color: var(--pack-orange); font: 800 10px Arial, sans-serif; }
 .service-card-link:hover { color: var(--pack-navy); }
