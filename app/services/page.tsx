@@ -4,6 +4,7 @@ import {
   CheckCircle2,
   Clock3,
   Leaf,
+  MessageCircle,
   PackageCheck,
   ShieldCheck,
   Truck,
@@ -47,14 +48,35 @@ const services = [
 export default function Services() {
   return (
     <main>
-      <section className="page-hero">
-        <div className="container">
-          <div className="breadcrumbs">Home → Services</div>
-          <h1>OUR SERVICES</h1>
-          <p>
-            We provide end-to-end packaging solutions that help businesses
-            protect products, improve handling and deliver with confidence.
-          </p>
+      <section className="page-hero services-hero">
+        <div className="container services-hero-grid">
+          <div>
+            <div className="breadcrumbs">Home → Services</div>
+            <span className="eyebrow">PACK INDIA SUPPORT</span>
+            <h1>OUR SERVICES</h1>
+            <p>
+              We provide end-to-end packaging solutions that help businesses
+              protect products, improve handling and deliver with confidence.
+            </p>
+            <div className="services-hero-actions">
+              <Link href="/contact" className="btn btn-orange">GET A QUOTE <ArrowRight size={14} /></Link>
+              <a href="https://wa.me/918123166638?text=Hello%20Pack%20India%2C%20I%20would%20like%20to%20discuss%20my%20packaging%20requirement." target="_blank" rel="noreferrer" className="services-whatsapp">
+                <MessageCircle size={15} /> WHATSAPP US
+              </a>
+            </div>
+          </div>
+          <div className="service-support-panel" aria-label="Pack India service support">
+            <span>YOUR REQUIREMENT, SIMPLIFIED</span>
+            {[
+              ["01", "Choose the right product"],
+              ["02", "Confirm size & quantity"],
+              ["03", "Coordinate delivery"],
+            ].map(([number, text]) => (
+              <div className="service-support-step" key={number}>
+                <b>{number}</b><p>{text}</p><ArrowRight size={15} />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -72,42 +94,35 @@ export default function Services() {
 
           <div className="service-grid">
             {services.map(({ icon: Icon, title, text }) => (
-              <article
-                className="service-card"
-                key={title}
-                style={{ transition: "transform .2s, box-shadow .2s" }}
-              >
-                <div
-                  className="icon"
-                  style={{
-                    width: 48,
-                    height: 48,
-                    borderRadius: 10,
-                    display: "grid",
-                    placeItems: "center",
-                    marginBottom: 14,
-                  }}
-                >
+              <article className="service-card service-card-enhanced" key={title}>
+                <span className="service-card-number">{String(services.findIndex((service) => service.title === title) + 1).padStart(2, "0")}</span>
+                <div className="icon">
                   <Icon size={25} />
                 </div>
                 <h3>{title}</h3>
                 <p>{text}</p>
-                <Link
-                  href="/contact"
-                  style={{
-                    color: "#ff7419",
-                    fontSize: 10,
-                    fontWeight: 800,
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: 5,
-                    marginTop: 8,
-                  }}
-                >
+                <Link href="/contact" className="service-card-link">
                   DISCUSS YOUR REQUIREMENT <ArrowRight size={12} />
                 </Link>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="service-approach-section">
+        <div className="container service-approach-grid">
+          <div>
+            <span className="eyebrow">A PRACTICAL APPROACH</span>
+            <h2>FROM REQUIREMENT TO <span className="orange">READY-TO-USE PACKAGING</span></h2>
+            <p>Tell us what you are packing, how it is handled and where it needs to go. We help you select the right product and organise the next step with clarity.</p>
+          </div>
+          <div className="service-approach-points">
+            {[
+              "Share product, size and quantity details",
+              "Get a practical packaging recommendation",
+              "Receive quotation and delivery coordination",
+            ].map((point) => <div key={point}><CheckCircle2 size={18} /> {point}</div>)}
           </div>
         </div>
       </section>
