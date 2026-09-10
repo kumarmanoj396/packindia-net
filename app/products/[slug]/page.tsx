@@ -51,9 +51,26 @@ export default async function ProductDetail({
   const { slug } = await params;
   const product = products.find((p) => p.slug === slug);
   if (!product) return notFound();
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.description,
+    image: `${siteUrl}${product.image}`,
+    url: `${siteUrl}/products/${product.slug}`,
+    category: product.category,
+    brand: { "@type": "Brand", name: "Pack India" },
+    manufacturer: { "@type": "Organization", name: "Pack India" },
+    additionalProperty: product.features.map((name) => ({
+      "@type": "PropertyValue",
+      name: "Product feature",
+      value: name,
+    })),
+  };
 
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
       <section className="page-hero">
         <div className="container">
           <div className="breadcrumbs">Home → Products → {product.name}</div>

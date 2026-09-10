@@ -14,11 +14,11 @@ const siteUrl = "https://www.packindia.net";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Pack India | Packaging Materials & Machines",
+    default: "Pack India | Angle Board & Packaging Machine Manufacturer in Bengaluru",
     template: "%s | Pack India",
   },
   description:
-    "Pack India offers angle board, paper core, packing materials, flexible packaging products, strapping tools and auto packaging machines.",
+    "Pack India is an angle board, paper core and packaging machine manufacturer in Hoskote, Bengaluru, supplying industrial packaging materials across Karnataka.",
   keywords: [
     "Pack India",
     "packaging materials",
@@ -32,12 +32,16 @@ export const metadata: Metadata = {
     "strapping machine",
     "packaging machines",
     "Hoskote Bengaluru packaging",
+    "paper core manufacturer Hoskote",
+    "edge protector machine supplier Karnataka",
+    "industrial packaging materials Bangalore",
+    "angle board manufacturer Bengaluru",
   ],
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     siteName: "Pack India",
-    title: "Pack India | Packaging Materials & Machines",
+    title: "Pack India | Angle Board & Packaging Machine Manufacturer in Bengaluru",
     description:
       "Packaging materials, flexible packaging products, strapping tools and auto packaging machines.",
     url: siteUrl,
@@ -54,11 +58,11 @@ export const metadata: Metadata = {
 
 const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": ["LocalBusiness", "Manufacturer"],
   name: "Pack India",
   url: "https://www.packindia.net",
-  email: ["sales.packindia@gmail.com", "packindia1991@gmail.com"],
-  telephone: ["+91 81231 66638", "+91 98447 23888"],
+  email: "sales.packindia@gmail.com",
+  telephone: "+91 81231 66638",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Sy No.117/4, Dodda Hullur Village, Kasaba Hobli",
@@ -69,6 +73,23 @@ const organizationSchema = {
   },
   description:
     "Mfg. of Angle Board, Paper Core, Packing Materials & Auto Machines.",
+  areaServed: ["Bengaluru", "Karnataka", "India"],
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+91 81231 66638",
+    contactType: "sales",
+    email: "sales.packindia@gmail.com",
+    availableLanguage: ["English", "Kannada", "Hindi"],
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Pack India Packaging Product Catalogue",
+    url: "https://www.packindia.net/products",
+    itemListElement: [
+      "Paper Products", "Board Products", "Films & Pouches", "Tapes",
+      "Strapping & Tools", "Packaging Machines", "Corrugation Box",
+    ].map((name) => ({ "@type": "OfferCatalog", name })),
+  },
 };
 
 export default function RootLayout({

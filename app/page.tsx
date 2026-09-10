@@ -31,6 +31,7 @@ export default function Home() {
               QUALITY. PRODUCTION.
               <br />
               <span>GROWTH.</span>
+              <small>ANGLE BOARD &amp; PACKAGING MACHINE MANUFACTURER IN BENGALURU</small>
             </h1>
             <p>
               Manufacturers of angle board, paper core, packing materials and

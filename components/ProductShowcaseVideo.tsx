@@ -45,7 +45,9 @@ export default function ProductShowcaseVideo() {
             onPause={() => setIsPlaying(false)}
           >
             <source src="/pack-india-product-showcase.mp4" type="video/mp4" />
-            Your browser does not support video playback.
+            <p className="video-fallback">
+              Video preview is unavailable. <a href="/products">Browse our products</a> instead.
+            </p>
           </video>
           <button
             className="video-play-toggle"
