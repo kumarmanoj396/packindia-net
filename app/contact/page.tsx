@@ -51,7 +51,10 @@ export default function Contact() {
     const email = String(data.get("email") || "").trim();
     const phone = String(data.get("phone") || "").trim();
     const product = String(data.get("product") || "").trim();
+    const requirementType = String(data.get("requirementType") || "").trim();
     const quantity = String(data.get("quantity") || "").trim();
+    const volume = String(data.get("volume") || "").trim();
+    const deliveryCity = String(data.get("deliveryCity") || "").trim();
     const message = String(data.get("message") || "").trim();
     if (!name || !phone || !product || !message) return;
     const whatsappMessage = [
@@ -60,8 +63,11 @@ export default function Contact() {
       `Name: ${name}`,
       `Email: ${email || "Not provided"}`,
       `Phone: ${phone}`,
+      `Requirement type: ${requirementType || "Not specified"}`,
       `Product: ${product}`,
       `Quantity: ${quantity || "Not specified"}`,
+      `Expected volume: ${volume || "Not specified"}`,
+      `Delivery city / pincode: ${deliveryCity || "Not specified"}`,
       `Requirement: ${message}`,
     ].join("\n");
     setSubmitted(true);
@@ -183,6 +189,12 @@ export default function Contact() {
               type="tel"
               required
             />
+            <select name="requirementType" aria-label="Requirement type">
+              <option value="">Requirement Type</option>
+              <option value="Packaging Consumables">Packaging Consumables</option>
+              <option value="Packaging Machinery">Packaging Machinery</option>
+              <option value="Both / Not Sure">Both / Not Sure</option>
+            </select>
             <select name="product" value={selectedProduct} onChange={(event) => setSelectedProduct(event.target.value)} required aria-label="Select Product">
               <option value="" disabled>
                 Select Product *
@@ -194,6 +206,14 @@ export default function Contact() {
               name="quantity"
               placeholder="Quantity / Approx. Requirement"
             />
+            <select name="volume" aria-label="Expected volume">
+              <option value="">Expected Volume / Quantity</option>
+              <option value="Below 5,000 metres / units">Below 5,000 metres / units</option>
+              <option value="5,000–25,000 metres / units">5,000–25,000 metres / units</option>
+              <option value="Bulk truck load / container">Bulk truck load / container</option>
+              <option value="Need help estimating">Need help estimating</option>
+            </select>
+            <input name="deliveryCity" placeholder="Delivery City / Pincode" />
             <textarea
               name="message"
               placeholder="Tell us your size, material, application or other requirement *"
@@ -233,11 +253,13 @@ export default function Contact() {
                 OPEN IN GOOGLE MAPS <ArrowRight size={15} />
               </a>
             </div>
-            <div className="map-placeholder">
-              <MapPin size={42} />
-              <b>PACK INDIA</b>
-              <span>Hoskote, Bengaluru - 562114</span>
-            </div>
+            <iframe
+              className="map-embed"
+              title="Pack India location in Hoskote, Bengaluru"
+              src="https://www.google.com/maps?q=Sy%20No.117%2F4%2C%20Dodda%20Hullur%20Village%2C%20Kasaba%20Hobli%2C%20Hoskote%2C%20Bengaluru%20562114&output=embed"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
       </section>
@@ -377,24 +399,10 @@ export default function Contact() {
           line-height: 1.7;
           max-width: 430px;
         }
-        .map-placeholder {
+        .map-embed {
           min-height: 230px;
-          background: linear-gradient(135deg, #e5ecef, #b8c9cf);
-          color: #092a4c;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          gap: 8px;
-        }
-        .map-placeholder svg {
-          color: #f36b21;
-        }
-        .map-placeholder b {
-          font-size: 16px;
-        }
-        .map-placeholder span {
-          font-size: 11px;
+          width: 100%;
+          border: 0;
         }
         @media (max-width: 700px) {
           .map-card {

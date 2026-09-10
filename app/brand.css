@@ -559,6 +559,69 @@ html[data-theme="dark"] .product-card h3 {
 @media (max-width: 600px) {
   .hero h1 small { margin-top: 11px; font-size: 9px; letter-spacing: .55px; }
 }
+
+/* Compact conversion-focused interactions */
+.btn,
+.whatsapp-contact,
+.services-whatsapp {
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+}
+.btn:hover,
+.whatsapp-contact:hover,
+.services-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 19px rgba(7, 22, 70, .2);
+}
+.product-hover-facts {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 2;
+  display: grid;
+  gap: 4px;
+  padding: 10px 12px;
+  background: linear-gradient(transparent, rgba(4, 12, 42, .94) 35%);
+  color: #fff;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .2s ease, transform .2s ease;
+  pointer-events: none;
+}
+.product-hover-facts span { color: #fff !important; margin: 0 !important; font: 700 9px/1.3 Arial, sans-serif !important; }
+.product-card:hover .product-hover-facts,
+.product-card:focus-within .product-hover-facts { opacity: 1; transform: translateY(0); }
+@media (max-width: 700px), (hover: none) {
+  .product-hover-facts { display: none; }
+}
+@media (max-width: 700px) {
+  .mobile-enquiry-bar .mobile-whatsapp { position: relative; overflow: visible; }
+  .mobile-enquiry-bar .mobile-whatsapp::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 8px;
+    right: 22%;
+    border: 2px solid rgba(255,255,255,.85);
+    border-radius: 50%;
+    animation: whatsapp-ping 2.4s ease-out infinite;
+  }
+  .mobile-enquiry-bar .mobile-whatsapp svg,
+  .mobile-enquiry-bar .mobile-whatsapp span { position: relative; z-index: 1; }
+}
+@keyframes whatsapp-ping {
+  0%, 25% { opacity: .8; transform: scale(.55); }
+  70%, 100% { opacity: 0; transform: scale(2); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn, .whatsapp-contact, .services-whatsapp, .product-hover-facts { transition: none; }
+  .mobile-enquiry-bar .mobile-whatsapp::after { animation: none; opacity: 0; }
+}
+
+/* Gallery sector filters */
+.gallery-filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 9px; margin: 0 0 26px; }
+.gallery-filters button { border: 1px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--heading); padding: 10px 14px; font: 800 10px Arial, sans-serif; cursor: pointer; transition: transform .2s ease, background .2s ease, border-color .2s ease, color .2s ease; }
+.gallery-filters button:hover, .gallery-filters button.is-active { background: var(--pack-orange); border-color: var(--pack-orange); color: #fff; transform: translateY(-1px); }
+.gallery-filter-empty { padding: 28px; text-align: center; background: var(--surface-soft); color: var(--muted); font-size: 13px; }
 @media (max-width: 1100px) {
   .brand {
     min-width: 252px;

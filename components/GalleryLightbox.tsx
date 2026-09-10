@@ -12,17 +12,26 @@ type GalleryImage = {
 };
 
 export default function GalleryLightbox({ images }: { images: GalleryImage[] }) {
+  const [activeFilter, setActiveFilter] = useState("All");
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const active = activeIndex === null ? null : images[activeIndex];
+  const filters = ["All", "Machinery in Action", "Finished Products", "Factory Floor & Warehouse"];
+  const imageGroup = (image: GalleryImage) => {
+    const text = `${image.title} ${image.category} ${image.caption}`.toLowerCase();
+    if (/(factory|warehouse|plant|dispatch|loading|truck)/.test(text)) return "Factory Floor & Warehouse";
+    if (/(machine|sealer|wrapping|tunnel|strapping|winding|cutting|punching)/.test(text)) return "Machinery in Action";
+    return "Finished Products";
+  };
+  const visibleImages = activeFilter === "All" ? images : images.filter((image) => imageGroup(image) === activeFilter);
+  const active = activeIndex === null ? null : visibleImages[activeIndex];
 
   const close = () => setActiveIndex(null);
   const previous = () =>
     setActiveIndex((index) =>
-      index === null ? null : (index - 1 + images.length) % images.length,
+      index === null ? null : (index - 1 + visibleImages.length) % visibleImages.length,
     );
   const next = () =>
     setActiveIndex((index) =>
-      index === null ? null : (index + 1) % images.length,
+      index === null ? null : (index + 1) % visibleImages.length,
     );
 
   useEffect(() => {
@@ -38,8 +47,20 @@ export default function GalleryLightbox({ images }: { images: GalleryImage[] }) 
 
   return (
     <>
+      <div className="gallery-filters" role="group" aria-label="Filter gallery images">
+        {filters.map((filter) => (
+          <button
+            className={activeFilter === filter ? "is-active" : ""}
+            key={filter}
+            type="button"
+            onClick={() => { setActiveFilter(filter); setActiveIndex(null); }}
+          >
+            {filter}
+          </button>
+        ))}
+      </div>
       <div className="catalogue-gallery">
-        {images.map((product, index) => (
+        {visibleImages.map((product, index) => (
           <button
             className="catalogue-card catalogue-card-button"
             key={`${product.title}-${index}`}
@@ -63,6 +84,7 @@ export default function GalleryLightbox({ images }: { images: GalleryImage[] }) 
           </button>
         ))}
       </div>
+      {!visibleImages.length && <p className="gallery-filter-empty">No images in this group yet. Add tagged images in Gallery Admin to populate it.</p>}
       {active && (
         <div className="gallery-lightbox" role="dialog" aria-modal="true" aria-label={active.title} onClick={close}>
           <div className="gallery-lightbox-content" onClick={(event) => event.stopPropagation()}>

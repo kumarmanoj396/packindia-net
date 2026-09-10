@@ -15,6 +15,9 @@ export default function ProductCard({ product }: { product: Product }) {
       <Link href={`/products/${product.slug}`} className="product-card-image-link" aria-label={`View ${product.name}`}>
         <div className="product-art">
           <img className="product-image" src={product.image} alt={product.name} />
+          <div className="product-hover-facts" aria-hidden="true">
+            {product.features.slice(0, 2).map((feature) => <span key={feature}>{feature}</span>)}
+          </div>
         </div>
       </Link>
       <div className="product-card-body">
