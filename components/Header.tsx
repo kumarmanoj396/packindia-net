@@ -10,7 +10,7 @@ const mobileLinks = [
   ["ABOUT US", "/about"],
   ["PRODUCTS", "/products"],
   ["SERVICES", "/services"],
-  ["WHY US", "/about#why-us"],
+  ["WHY US", "/why-us"],
   ["GALLERY", "/gallery"],
   ["CONTACT US", "/contact"],
   ["DOWNLOAD CATALOGUE", "/pack-india-product-catalogue.pdf"],
@@ -131,7 +131,7 @@ export default function Header() {
               )}
             </div>
             <Link href="/services">SERVICES</Link>
-            <Link href="/about#why-us">WHY US</Link>
+            <Link href="/why-us">WHY US</Link>
             <Link href="/gallery">GALLERY</Link>
             <Link href="/contact">CONTACT US</Link>
             <a className="nav-catalogue-link" href="/pack-india-product-catalogue.pdf" download data-analytics-event="catalogue_download" data-placement="header"><Download size={12} /> CATALOGUE</a>

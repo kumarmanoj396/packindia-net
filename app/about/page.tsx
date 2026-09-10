@@ -5,6 +5,7 @@ import {
   ShieldCheck,
   Truck,
   Users,
+  PackageCheck,
   ArrowRight,
 } from "lucide-react";
 import LeadStrip from "../../components/LeadStrip";
@@ -18,8 +19,8 @@ export default function About() {
           <div className="breadcrumbs">Home → About Us</div>
           <h1>ABOUT PACK INDIA</h1>
           <p>
-            A dependable packaging partner focused on quality products,
-            practical solutions and timely service.
+            Manufacturers and suppliers of angle board, paper core, packaging
+            materials and packaging machines from Hoskote, Bengaluru.
           </p>
         </div>
       </section>
@@ -72,6 +73,21 @@ export default function About() {
             <a className="btn btn-orange" href="/contact">
               GET IN TOUCH <ArrowRight size={15} />
             </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="about-capabilities-section">
+        <div className="container">
+          <div className="section-title">
+            <span>WHAT WE PROVIDE</span>
+            <h2>COMPLETE PACKAGING <span className="orange">CAPABILITY</span></h2>
+            <p>One practical source for protective paper products, flexible packing materials, tools and machinery.</p>
+          </div>
+          <div className="about-capabilities-grid">
+            <article><PackageCheck /><h3>Protective Paper Products</h3><p>Angle boards, edge protectors, paper cores and tube solutions for stable handling and transit.</p></article>
+            <article><ShieldCheck /><h3>Packaging Materials</h3><p>Films, tapes, strapping products and practical consumables for daily packing operations.</p></article>
+            <article><Truck /><h3>Machinery &amp; Support</h3><p>Packaging-machine options and responsive support from product selection through delivery coordination.</p></article>
           </div>
         </div>
       </section>
