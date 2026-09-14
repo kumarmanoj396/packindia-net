@@ -1164,9 +1164,23 @@ html[data-theme="dark"] .quick-view-image { background: #fff; }
 /* Keep the real Pack India lockup prominent on narrow iPhone screens.
    This is intentionally last because older mobile rules also style .brand-logo. */
 @media (max-width: 600px) {
-  .nav { height: 84px !important; gap: 10px !important; }
-  .brand { flex: 1 1 auto !important; min-width: 0 !important; height: 64px !important; overflow: visible !important; }
-  .brand-logo { width: min(232px, calc(100vw - 112px)) !important; max-width: none !important; height: 52px !important; object-fit: contain !important; object-position: left center !important; }
+  .nav { height: 92px !important; gap: 10px !important; }
+  .brand { flex: 1 1 auto !important; min-width: 0 !important; height: 72px !important; overflow: visible !important; }
+  .brand-logo { width: min(270px, calc(100vw - 82px)) !important; max-width: none !important; height: 60px !important; object-fit: contain !important; object-position: left center !important; }
   .header-actions .theme-toggle, .header-actions .quote-btn { display: none !important; }
   .mobile-menu-toggle { width: 48px !important; height: 48px !important; }
+}
+
+/* Home catalogue is arranged as five machinery cards, then four material categories. */
+.home-product-row + .home-product-row { margin-top: 30px; }
+.home-product-row-label { display: block; margin: 0 0 11px; color: var(--pack-orange); font: 800 10px/1 Arial, sans-serif; letter-spacing: 1.25px; }
+.home-machines-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.home-materials-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1100px) {
+  .home-machines-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .home-materials-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .home-machines-grid,
+  .home-materials-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }

@@ -14,10 +14,29 @@ import ContactCta from "../components/ContactCta";
 import PackagingProcess from "../components/PackagingProcess";
 import ProductShowcaseVideo from "../components/ProductShowcaseVideo";
 import Reveal from "../components/Reveal";
-import { products } from "../lib/products";
+import { products, type Product } from "../lib/products";
+
+const pickProducts = (names: string[]): Product[] =>
+  names
+    .map((name) => products.find((product) => product.name === name))
+    .filter((product): product is Product => Boolean(product));
+
+const featuredMachines = pickProducts([
+  "Angle Board Machine",
+  "Edge Board Machine",
+  "Edge Protector Machine",
+  "OD Punching Machine",
+  "Paper Core Machine",
+]);
+
+const featuredMaterials = pickProducts([
+  "Angle Board",
+  "Paper Core",
+  "Box",
+  "Stretch Film",
+]);
 
 export default function Home() {
-  const featuredProducts = products.slice(0, 9);
   return (
     <main>
       <section className="hero" style={{ minHeight: "410px" }}>
@@ -102,10 +121,21 @@ export default function Home() {
             }
             text="Explore selected products from the Pack India catalogue. Visit the Products page for the complete range."
           />
-          <div className="products-grid">
-            {featuredProducts.map((p) => (
-              <ProductCard key={p.slug} product={p} />
-            ))}
+          <div className="home-product-row">
+            <span className="home-product-row-label">PACKAGING MACHINES</span>
+            <div className="products-grid home-machines-grid">
+              {featuredMachines.map((p) => (
+                <ProductCard key={p.slug} product={p} />
+              ))}
+            </div>
+          </div>
+          <div className="home-product-row">
+            <span className="home-product-row-label">PACKAGING MATERIALS</span>
+            <div className="products-grid home-materials-grid">
+              {featuredMaterials.map((p) => (
+                <ProductCard key={p.slug} product={p} />
+              ))}
+            </div>
           </div>
           <div style={{ textAlign: "center", marginTop: 28 }}>
             <Link href="/products" className="btn btn-orange">
