@@ -34,6 +34,7 @@ const featuredMaterials = pickProducts([
   "Paper Core",
   "Box",
   "Stretch Film",
+  "BOPP Tapes",
 ]);
 
 export default function Home() {
