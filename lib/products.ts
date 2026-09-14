@@ -53,7 +53,7 @@ const suppliedProductImages: Record<string, string> = {
   "VCI Film": "/product-images/catalog/vci-film.png",
   "VCI Bag": "/product-images/catalog/vci-bag.png",
   "Zip Lock": "/product-images/catalog/zip-lock.png",
-  "Angle Board Machine": "/product-images/packing-machine.png",
+  "Angle Board Machine": "/product-images/catalog/machines/angle-board-machine.jpeg",
   "Edge Board Machine": "/product-images/catalog/machines/Edge Board Machine.png",
   "Edge Protector Machine": "/product-images/catalog/machines/Edge Protector Machine.png",
   "OD Punching Machine": "/product-images/packing-machine.png",
