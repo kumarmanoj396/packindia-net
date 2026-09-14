@@ -280,6 +280,44 @@ html[data-theme="dark"] .theme-toggle {
   display: block;
   object-fit: contain;
 }
+.hero-carousel {
+  overflow: hidden;
+}
+.hero-carousel-slide {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  object-position: center bottom;
+  opacity: 0;
+  transform: translateX(7%) !important;
+  transition: opacity .65s ease, transform .65s ease;
+  pointer-events: none;
+}
+.hero-carousel-slide.is-active {
+  opacity: 1;
+  transform: translateX(0) !important;
+}
+.hero-carousel-dots {
+  position: absolute;
+  z-index: 2;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  gap: 7px;
+}
+.hero-carousel-dots button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 1px solid rgba(255,255,255,.9);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+.hero-carousel-dots button.is-active { background: var(--pack-orange); border-color: var(--pack-orange); }
 .product-section {
   background: var(--surface-soft);
 }
@@ -1206,4 +1244,19 @@ html[data-theme="dark"] .quick-view-image { background: #fff; }
   .product-section .product-art { height: 220px; }
   .product-section .product-card h3 { min-height: 0; font-size: 16px; }
   .product-section .product-card p { min-height: 0; font-size: 12px; }
+}
+
+/* Keep the home image carousel contained on small screens as well. */
+@media (max-width: 600px) {
+  .hero-carousel-slide {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    transform: translateX(7%) !important;
+  }
+  .hero-carousel-slide.is-active { transform: translateX(0) !important; }
+  .hero-carousel-dots { right: 12px; bottom: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-carousel-slide { transition: none; }
 }

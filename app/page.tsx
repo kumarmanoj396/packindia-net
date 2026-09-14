@@ -13,6 +13,7 @@ import LeadStrip from "../components/LeadStrip";
 import ContactCta from "../components/ContactCta";
 import PackagingProcess from "../components/PackagingProcess";
 import ProductShowcaseVideo from "../components/ProductShowcaseVideo";
+import HeroImageCarousel from "../components/HeroImageCarousel";
 import Reveal from "../components/Reveal";
 import { products, type Product } from "../lib/products";
 
@@ -96,15 +97,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div
-            className="hero-visual hero-machine"
-            aria-label="Pack India packaging machine"
-          >
-            <img
-              src="/packindia-machine-hero.png"
-              alt="Pack India packaging production machine"
-            />
-          </div>
+          <HeroImageCarousel />
         </div>
       </section>
 
