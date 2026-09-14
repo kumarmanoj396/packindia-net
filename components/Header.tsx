@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Phone, Mail, ChevronDown, Download, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import ThemeToggle from "./ThemeToggle";
+import SocialMediaLinks from "./SocialMediaLinks";
 
 const mobileLinks = [
   ["HOME", "/"],
@@ -26,12 +27,6 @@ const productLinks = [
   "Tapes",
   "Strapping & Tools",
   "Packaging Machines",
-] as const;
-
-const socialLinks = [
-  ["Instagram", "https://www.instagram.com/sales.packindia?stkn=MXI4bHZqZTNnMXRuaQ=="],
-  ["Facebook", "https://www.facebook.com/share/1Ep4w7nhkR/"],
-  ["YouTube", "https://youtu.be/fsUTmogXcDI?si=-R_aOk0khMoTaTE1"],
 ] as const;
 
 export default function Header() {
@@ -170,11 +165,7 @@ export default function Header() {
                   ))}
                   <div className="mobile-social-links" aria-label="Pack India social media">
                     <span>FOLLOW US</span>
-                    {socialLinks.map(([label, href]) => (
-                      <a key={label} href={href} target="_blank" rel="noreferrer" onClick={closeMenu} data-analytics-event="social_visit" data-placement={`mobile_${label.toLowerCase()}`}>
-                        {label}
-                      </a>
-                    ))}
+                    <SocialMediaLinks placement="mobile" />
                   </div>
                 </div>
               )}
