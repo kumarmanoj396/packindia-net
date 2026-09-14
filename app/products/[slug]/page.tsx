@@ -82,7 +82,11 @@ export default async function ProductDetail({
       <section className="section detail">
         <div className="container detail-grid">
           <div>
-            <div className="detail-art product-detail-image">
+            <div
+              className={`detail-art product-detail-image${
+                product.category === "Packaging Machines" ? " product-detail-image-machine" : ""
+              }`}
+            >
               <img src={product.image} alt={product.name} />
             </div>
           </div>
