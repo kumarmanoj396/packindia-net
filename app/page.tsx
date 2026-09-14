@@ -24,9 +24,9 @@ const pickProducts = (names: string[]): Product[] =>
 const featuredMachines = pickProducts([
   "Angle Board Machine",
   "Edge Board Machine",
-  "Edge Protector Machine",
-  "OD Punching Machine",
   "Paper Core Machine",
+  "OD Punching Machine",
+  "Paper Core Cutting Machine",
 ]);
 
 const featuredMaterials = pickProducts([
