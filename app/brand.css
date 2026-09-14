@@ -1184,3 +1184,15 @@ html[data-theme="dark"] .quick-view-image { background: #fff; }
   .home-machines-grid,
   .home-materials-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* One product per row on phones prevents an uneven final machine card and cramped labels. */
+@media (max-width: 600px) {
+  .product-section .home-machines-grid,
+  .product-section .home-materials-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  .product-section .home-product-row-label { margin-top: 8px; }
+  .product-section .product-art { height: 220px; }
+  .product-section .product-card h3 { min-height: 0; font-size: 16px; }
+  .product-section .product-card p { min-height: 0; font-size: 12px; }
+}
