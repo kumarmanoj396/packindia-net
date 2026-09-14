@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { unstable_cache } from "next/cache";
 import { ArrowRight } from "lucide-react";
 import ContactCta from "../../components/ContactCta";
 import GalleryLightbox from "../../components/GalleryLightbox";
@@ -6,8 +7,14 @@ import { uploadedGalleryImages } from "../../lib/gallery";
 
 export const dynamic = "force-dynamic";
 
+const getGalleryImages = unstable_cache(
+  uploadedGalleryImages,
+  ["pack-india-gallery-images"],
+  { revalidate: 60 },
+);
+
 export default async function Gallery() {
-  const uploadedImages = await uploadedGalleryImages();
+  const uploadedImages = await getGalleryImages();
   const allImages = uploadedImages.map((image) => ({
     title: image.title,
     category: image.category,

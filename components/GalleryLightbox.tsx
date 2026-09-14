@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 type GalleryImage = {
@@ -69,9 +70,11 @@ export default function GalleryLightbox({ images }: { images: GalleryImage[] }) 
             aria-label={`Open image: ${product.title}`}
           >
             <div className="catalogue-image">
-              <img
+              <Image
                 src={product.image}
                 alt={product.title}
+                fill
+                sizes="(max-width: 600px) 94vw, (max-width: 900px) 46vw, 31vw"
                 loading="lazy"
                 style={{ objectPosition: product.position }}
               />

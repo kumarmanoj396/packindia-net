@@ -506,6 +506,7 @@ html[data-theme="dark"] .product-card h3 {
   overflow: hidden;
 }
 .catalogue-image {
+  position: relative;
   height: 320px;
   background: #fff;
   display: grid;
@@ -550,6 +551,17 @@ html[data-theme="dark"] .product-card h3 {
   .product-detail-image {
     height: 300px !important;
   }
+}
+
+/* Mobile header: give the Pack India logo priority; quotation remains in the menu. */
+@media (max-width: 600px) {
+  .nav { height: 78px; gap: 8px !important; }
+  .brand { flex: 1 1 auto !important; height: 58px; overflow: visible; }
+  .brand-logo { width: min(210px, calc(100vw - 116px)) !important; max-width: none; height: 46px !important; }
+  .header-actions { gap: 8px !important; }
+  .header-actions .theme-toggle,
+  .header-actions .quote-btn { display: none; }
+  .mobile-menu-toggle { width: 44px !important; height: 44px !important; }
 }
 
 /* Local-search wording stays subordinate to the main home-page statement. */
