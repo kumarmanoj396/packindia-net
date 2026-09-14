@@ -496,6 +496,13 @@ html[data-theme="dark"] .product-card h3 {
   height: 430px !important;
   padding: 14px;
 }
+.product-detail-image-machine img {
+  width: auto !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto;
+  object-fit: contain !important;
+}
 .product-information {
   background: var(--surface-soft);
 }
