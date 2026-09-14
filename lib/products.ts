@@ -55,7 +55,7 @@ const suppliedProductImages: Record<string, string> = {
   "Zip Lock": "/product-images/catalog/zip-lock.png",
   "Angle Board Machine": "/product-images/catalog/machines/angle-board-machine.jpeg",
   "Edge Board Machine": "/product-images/catalog/machines/Edge Board Machine.png",
-  "OD Punching Machine": "/product-images/packing-machine.png",
+  "OD Punching Machine": "/product-images/catalog/machines/od-punching-machine.png",
   "Paper Core Machine": "/product-images/catalog/machines/paper-core-machine.jpeg",
   "Paper Core Cutting Machine": "/product-images/catalog/machines/Paper core machine.png",
   "Fully Automatic Strapping Machines": "/product-images/catalog/machines/Fully Automatic Strapping Machines.png",
