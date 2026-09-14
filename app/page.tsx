@@ -14,6 +14,7 @@ import ContactCta from "../components/ContactCta";
 import PackagingProcess from "../components/PackagingProcess";
 import ProductShowcaseVideo from "../components/ProductShowcaseVideo";
 import HeroImageCarousel from "../components/HeroImageCarousel";
+import SocialMediaLinks from "../components/SocialMediaLinks";
 import Reveal from "../components/Reveal";
 import { products, type Product } from "../lib/products";
 
@@ -95,6 +96,10 @@ export default function Home() {
               <Link href="/contact" className="btn btn-outline">
                 CONTACT US <ArrowRight size={14} />
               </Link>
+            </div>
+            <div className="home-socials" aria-label="Follow Pack India">
+              <span>FOLLOW PACK INDIA</span>
+              <SocialMediaLinks placement="home" />
             </div>
           </div>
           <HeroImageCarousel />
