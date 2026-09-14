@@ -1160,3 +1160,13 @@ html[data-theme="dark"] .quick-view-image { background: #fff; }
 
 /* Process-card hover and touch interaction */
 .process-step{position:relative;z-index:1;width:100%;min-height:100%;appearance:none;text-align:left;font:inherit;background:var(--surface);border:1px solid var(--border);padding:25px 20px 22px;cursor:pointer;opacity:0;transform:translateY(24px);transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease,background-color .28s ease}.reveal-visible .process-step:hover,.reveal-visible .process-step.is-active{z-index:2;transform:translateY(-8px) scale(1.018);border-color:var(--pack-orange);box-shadow:0 14px 28px color-mix(in srgb,var(--pack-navy) 20%,transparent)}.process-step:focus-visible{outline:2px solid var(--pack-orange);outline-offset:3px}.process-step:hover .process-icon,.process-step.is-active .process-icon{background:var(--pack-orange);color:#fff;border-color:var(--pack-orange);transform:rotate(-5deg) scale(1.08)}.process-step .process-icon{transition:transform .25s ease,background-color .25s ease,color .25s ease,border-color .25s ease}.process-step.is-active .process-number{color:var(--heading)}@media(max-width:800px){.reveal-visible .process-step:hover,.reveal-visible .process-step.is-active{transform:translateY(-5px) scale(1.01)}}@media(prefers-reduced-motion:reduce){.process-step{opacity:1;transform:none}.process-step,.process-step .process-icon{transition:none}.reveal-visible .process-step:hover,.reveal-visible .process-step.is-active{transform:none}}
+
+/* Keep the real Pack India lockup prominent on narrow iPhone screens.
+   This is intentionally last because older mobile rules also style .brand-logo. */
+@media (max-width: 600px) {
+  .nav { height: 84px !important; gap: 10px !important; }
+  .brand { flex: 1 1 auto !important; min-width: 0 !important; height: 64px !important; overflow: visible !important; }
+  .brand-logo { width: min(232px, calc(100vw - 112px)) !important; max-width: none !important; height: 52px !important; object-fit: contain !important; object-position: left center !important; }
+  .header-actions .theme-toggle, .header-actions .quote-btn { display: none !important; }
+  .mobile-menu-toggle { width: 48px !important; height: 48px !important; }
+}
