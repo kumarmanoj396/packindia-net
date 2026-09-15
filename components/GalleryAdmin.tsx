@@ -4,6 +4,10 @@ import { FormEvent, useEffect, useState } from "react";
 
 type ImageItem = { url: string; pathname: string; title: string; category: string; caption: string; displayOrder: number };
 
+function allowUiUpdate() {
+  return new Promise<void>((resolve) => requestAnimationFrame(() => resolve()));
+}
+
 export default function GalleryAdmin() {
   const [authenticated, setAuthenticated] = useState(false);
   const [email, setEmail] = useState("");
@@ -11,6 +15,7 @@ export default function GalleryAdmin() {
   const [images, setImages] = useState<ImageItem[]>([]);
   const [message, setMessage] = useState("");
   const [busy, setBusy] = useState(false);
+  const [removingUrl, setRemovingUrl] = useState("");
 
   async function refresh() {
     const response = await fetch("/api/admin/gallery");
@@ -48,6 +53,7 @@ export default function GalleryAdmin() {
     const data = new FormData(form);
     setBusy(true);
     setMessage("");
+    await allowUiUpdate();
     const response = await fetch("/api/admin/gallery", {
       method: "POST",
       body: data,
@@ -64,19 +70,25 @@ export default function GalleryAdmin() {
   async function remove(url: string) {
     if (!confirm("Remove this image from the Gallery?")) return;
     setBusy(true);
+    setRemovingUrl(url);
+    setMessage("");
+    await allowUiUpdate();
     const response = await fetch("/api/admin/gallery", {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ url }),
     });
-    if (response.ok)
+    if (response.ok) {
       setImages((current) => current.filter((image) => image.url !== url));
-    else setMessage("Could not remove the image.");
+      setMessage("Image removed from the public Gallery.");
+    } else setMessage("Could not remove the image. Please try again.");
     setBusy(false);
+    setRemovingUrl("");
   }
   async function save(image: ImageItem) {
     setBusy(true);
     setMessage("");
+    await allowUiUpdate();
     const response = await fetch("/api/admin/gallery", { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify(image) });
     const result = await response.json();
     if (!response.ok) setMessage(result.error || "Could not save image details.");
@@ -183,7 +195,7 @@ export default function GalleryAdmin() {
                   </label>
                   <div className="admin-image-actions">
                     <button type="button" onClick={() => save(image)} disabled={busy}>SAVE</button>
-                    <button type="button" onClick={() => remove(image.url)} disabled={busy}>REMOVE</button>
+                    <button type="button" onClick={() => remove(image.url)} disabled={busy}>{removingUrl === image.url ? "REMOVING…" : "REMOVE"}</button>
                   </div>
                 </div>
               </article>
