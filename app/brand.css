@@ -120,10 +120,19 @@ nav a:hover,
 .footer-socials-centered {
   grid-column: 1 / -1;
   justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 22px;
   margin-top: 36px;
   padding-top: 24px;
   border-top: 1px solid rgba(255,255,255,.18);
   text-align: center;
+}
+.footer-socials-centered > span {
+  width: auto;
+  color: #dbe5f6;
+  font-size: 14px;
+  letter-spacing: 1.35px;
 }
 .footer-socials-centered .social-media-icons { width: auto; }
 .social-media-icons { display: flex; align-items: center; gap: 12px; }
