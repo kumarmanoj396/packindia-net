@@ -117,6 +117,15 @@ nav a:hover,
   width: 54px !important;
   height: 40px !important;
 }
+.footer-socials-centered {
+  grid-column: 1 / -1;
+  justify-content: center;
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,.18);
+  text-align: center;
+}
+.footer-socials-centered .social-media-icons { width: auto; }
 .social-media-icons { display: flex; align-items: center; gap: 12px; }
 .social-icon {
   display: grid !important;

@@ -19,10 +19,6 @@ export default function Footer() {
               from the Pack India catalogue.
             </p>
             <a className="footer-catalogue-link" href="/pack-india-product-catalogue.pdf" download data-analytics-event="catalogue_download" data-placement="footer"><Download size={14} /> DOWNLOAD PRODUCT CATALOGUE</a>
-            <div className="footer-socials" aria-label="Pack India social media">
-              <span>FOLLOW PACK INDIA</span>
-              <SocialMediaLinks placement="footer" />
-            </div>
           </div>
           <div>
             <h4>QUICK LINKS</h4>
@@ -55,6 +51,10 @@ export default function Footer() {
             <a href="mailto:packindia1991@gmail.com">
               packindia1991@gmail.com
             </a>
+          </div>
+          <div className="footer-socials footer-socials-centered" aria-label="Pack India social media">
+            <span>FOLLOW PACK INDIA</span>
+            <SocialMediaLinks placement="footer" />
           </div>
         </div>
       </div>
