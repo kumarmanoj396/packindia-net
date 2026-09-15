@@ -135,6 +135,22 @@ nav a:hover,
   letter-spacing: 1.35px;
 }
 .footer-socials-centered .social-media-icons { width: auto; }
+.footer-socials-centered .social-media-icons { gap: 20px; }
+.footer-socials-centered .social-icon {
+  width: 88px !important;
+  height: 88px !important;
+  border-radius: 22px;
+  box-shadow: none;
+}
+.footer-socials-centered .social-icon svg { width: 42px; height: 42px; }
+.footer-socials-centered .social-icon-facebook { border-radius: 50%; }
+.footer-socials-centered .social-icon-facebook svg { width: 44px; height: 44px; }
+.footer-socials-centered .social-icon-youtube {
+  width: 108px !important;
+  height: 80px !important;
+  border-radius: 20px;
+}
+.footer-socials-centered .social-icon-youtube svg { width: 48px; height: 48px; }
 .social-media-icons { display: flex; align-items: center; gap: 12px; }
 .social-icon {
   display: grid !important;
@@ -166,6 +182,16 @@ nav a:hover,
   letter-spacing: 1px;
 }
 .home-socials .social-media-icons { gap: 11px; }
+@media (max-width: 600px) {
+  .footer-socials-centered { flex-wrap: wrap; gap: 16px; }
+  .footer-socials-centered > span { width: 100%; }
+  .footer-socials-centered .social-media-icons { width: 100%; justify-content: center; gap: 14px; }
+  .footer-socials-centered .social-icon { width: 62px !important; height: 62px !important; border-radius: 16px; }
+  .footer-socials-centered .social-icon svg { width: 30px; height: 30px; }
+  .footer-socials-centered .social-icon-facebook svg { width: 32px; height: 32px; }
+  .footer-socials-centered .social-icon-youtube { width: 76px !important; height: 58px !important; border-radius: 15px; }
+  .footer-socials-centered .social-icon-youtube svg { width: 34px; height: 34px; }
+}
 .catalogue-download-button {
   border-color: var(--pack-orange) !important;
   color: var(--pack-orange) !important;
