@@ -1,11 +1,12 @@
 "use client";
 
 import { FormEvent, useEffect, useState } from "react";
+import { flushSync } from "react-dom";
 
 type ImageItem = { url: string; pathname: string; title: string; category: string; caption: string; displayOrder: number };
 
 function allowUiUpdate() {
-  return new Promise<void>((resolve) => requestAnimationFrame(() => resolve()));
+  return new Promise<void>((resolve) => requestAnimationFrame(() => requestAnimationFrame(() => resolve())));
 }
 
 export default function GalleryAdmin() {
@@ -69,21 +70,29 @@ export default function GalleryAdmin() {
   }
   async function remove(url: string) {
     if (!confirm("Remove this image from the Gallery?")) return;
-    setBusy(true);
-    setRemovingUrl(url);
-    setMessage("");
-    await allowUiUpdate();
-    const response = await fetch("/api/admin/gallery", {
-      method: "DELETE",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ url }),
-    });
-    if (response.ok) {
+    const imageToRestore = images.find((image) => image.url === url);
+    flushSync(() => {
+      setRemovingUrl(url);
+      setMessage("");
       setImages((current) => current.filter((image) => image.url !== url));
+    });
+    await allowUiUpdate();
+    try {
+      const response = await fetch("/api/admin/gallery", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ url }),
+      });
+      if (!response.ok) throw new Error("Remove failed");
       setMessage("Image removed from the public Gallery.");
-    } else setMessage("Could not remove the image. Please try again.");
-    setBusy(false);
-    setRemovingUrl("");
+    } catch {
+      if (imageToRestore) {
+        setImages((current) => [...current, imageToRestore].sort((a, b) => a.displayOrder - b.displayOrder || a.title.localeCompare(b.title)));
+      }
+      setMessage("Could not remove the image. Please try again.");
+    } finally {
+      setRemovingUrl("");
+    }
   }
   async function save(image: ImageItem) {
     setBusy(true);
@@ -195,7 +204,7 @@ export default function GalleryAdmin() {
                   </label>
                   <div className="admin-image-actions">
                     <button type="button" onClick={() => save(image)} disabled={busy}>SAVE</button>
-                    <button type="button" onClick={() => remove(image.url)} disabled={busy}>{removingUrl === image.url ? "REMOVING…" : "REMOVE"}</button>
+                    <button type="button" onClick={() => remove(image.url)} disabled={busy || Boolean(removingUrl)}>{removingUrl === image.url ? "REMOVING…" : "REMOVE"}</button>
                   </div>
                 </div>
               </article>
