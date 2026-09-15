@@ -142,7 +142,7 @@ export default function GalleryAdmin() {
             <span className="eyebrow">PACK INDIA ADMIN</span>
             <h1>Gallery Manager</h1>
             <p>
-              Upload JPG, PNG, or WebP files up to 10 MB. Add details and choose the order in which photos appear publicly.
+              Upload an image, save its name if needed, or remove it from the public Gallery.
             </p>
           </div>
           <button className="text-link" type="button" onClick={logout}>
@@ -150,17 +150,6 @@ export default function GalleryAdmin() {
           </button>
         </div>
         <form className="admin-upload" onSubmit={upload}>
-          <label>
-            Image title
-            <input
-              name="title"
-              placeholder="Example: New packaging machine"
-              required
-            />
-          </label>
-          <label>Product category<input name="category" placeholder="Example: Paper Products" required /></label>
-          <label>Display order<input name="displayOrder" type="number" min="0" defaultValue="999" required /></label>
-          <label className="admin-caption">Caption (optional)<input name="caption" placeholder="Short description for visitors" /></label>
           <label>
             Image file
             <input
@@ -170,8 +159,15 @@ export default function GalleryAdmin() {
               required
             />
           </label>
+          <label>
+            Image name <span>(optional)</span>
+            <input
+              name="title"
+              placeholder="Example: Packaging machine"
+            />
+          </label>
           <button className="btn btn-orange" disabled={busy}>
-            {busy ? "UPLOADING…" : "UPLOAD IMAGE"}
+            {busy ? "SAVING…" : "UPLOAD & SAVE"}
           </button>
         </form>
         {message && <p className="admin-message">{message}</p>}
@@ -181,11 +177,14 @@ export default function GalleryAdmin() {
               <article key={image.url}>
                 <img src={image.url} alt={image.title} />
                 <div className="admin-image-fields">
-                  <label>Title<input value={image.title} onChange={(event) => update(image.url, "title", event.target.value)} /></label>
-                  <label>Category<input value={image.category} onChange={(event) => update(image.url, "category", event.target.value)} /></label>
-                  <label>Order<input type="number" min="0" value={image.displayOrder} onChange={(event) => update(image.url, "displayOrder", Number(event.target.value))} /></label>
-                  <label>Caption<input value={image.caption} onChange={(event) => update(image.url, "caption", event.target.value)} /></label>
-                  <div className="admin-image-actions"><button type="button" onClick={() => save(image)} disabled={busy}>SAVE</button><button type="button" onClick={() => remove(image.url)} disabled={busy}>REMOVE</button></div>
+                  <label>
+                    Image name
+                    <input value={image.title} onChange={(event) => update(image.url, "title", event.target.value)} />
+                  </label>
+                  <div className="admin-image-actions">
+                    <button type="button" onClick={() => save(image)} disabled={busy}>SAVE</button>
+                    <button type="button" onClick={() => remove(image.url)} disabled={busy}>REMOVE</button>
+                  </div>
                 </div>
               </article>
             ))
