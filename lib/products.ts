@@ -59,6 +59,8 @@ const suppliedProductImages: Record<string, string> = {
   "Paper Core Machine": "/product-images/catalog/machines/paper-core-machine.jpeg",
   "Paper Core Cutting Machine": "/product-images/catalog/machines/Paper core machine.png",
   "Fully Automatic Strapping Machines": "/product-images/catalog/machines/Fully Automatic Strapping Machines.png",
+  "Strapping Machine - Semi Auto & Automatic":
+    "/product-images/catalog/machines/strapping-machine-semi-auto-automatic.png",
   "Shrink Chamber Machine": "/product-images/catalog/machines/Shrink Chamber Machine.png",
   "Flame Proof Shrink Tunnel": "/product-images/catalog/machines/Flame Proof Shrink Tunnel.png",
   "L-Sealer with PTA": "/product-images/catalog/machines/L-Sealer with PTA.png",
@@ -72,6 +74,8 @@ const suppliedProductImages: Record<string, string> = {
   "Water Tank Wrapping Machine": "/product-images/catalog/machines/Water Tank Wrapping Machine.png",
   "Ring Wrapping Machine": "/product-images/catalog/machines/Ring Wrapping Machine.png",
   "Vacuum Chamber Machine": "/product-images/catalog/machines/Vacuum Chamber Machine.png",
+  "Pallet Wrapping Machine":
+    "/product-images/catalog/machines/pallet-wrapping-machine.png",
   "V-Cut Paper Edge Protector": "/product-images/catalog/angle-board-flat.png",
   "Paper Edge Protector": "/product-images/catalog/vertical-protection.png",
   "Paper Angle Edge Protector": "/product-images/catalog/angle-board.png",
