@@ -52,6 +52,10 @@ export const metadata: Metadata = {
     description:
       "Packaging materials, flexible packaging products, strapping tools and auto packaging machines.",
   },
+  icons: {
+    icon: [{ url: "/favicon.png", type: "image/png", sizes: "512x512" }],
+    apple: [{ url: "/favicon.png", type: "image/png", sizes: "512x512" }],
+  },
   robots: { index: true, follow: true },
   verification: { google: process.env.GOOGLE_SITE_VERIFICATION },
 };
@@ -61,6 +65,7 @@ const organizationSchema = {
   "@type": ["LocalBusiness", "Manufacturer"],
   name: "Pack India",
   url: "https://www.packindia.net",
+  logo: "https://www.packindia.net/favicon.png",
   email: "sales.packindia@gmail.com",
   telephone: "+91 81231 66638",
   address: {
