@@ -25,7 +25,7 @@ const suppliedProductImages: Record<string, string> = {
   "Packing Container": "/product-images/catalog/packing-container.png",
   "Corrugated Box & Roll, 3 Ply to 9 Ply":
     "/product-images/catalog/corrugated-box.png",
-  Pallets: "/product-images/catalog/corrugated-box.png",
+  Pallets: "/product-images/catalog/pallets.png",
   "LD, LLDPE, PP, BOPP, HM, HDPE - Film":
     "/product-images/catalog/poly-film.png",
   "Stretch Film": "/product-images/catalog/ld-shrink-film-roll.png",

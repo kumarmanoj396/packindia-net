@@ -601,26 +601,24 @@ html[data-theme="dark"] .product-card h3 {
   gap: 12px;
 }
 .product-detail-image {
-  height: 340px !important;
+  height: auto !important;
   background: #fff;
   border: 2px solid var(--pack-navy);
   padding: 0;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
 }
 .product-detail-image img {
   width: 100% !important;
-  height: 100% !important;
+  height: auto !important;
   max-width: none !important;
   max-height: none !important;
-  object-fit: cover !important;
+  object-fit: contain !important;
   object-position: center;
   display: block;
 }
 .product-detail-image-machine {
-  height: 360px !important;
+  height: auto !important;
 }
 .product-information {
   background: var(--surface-soft);
@@ -679,10 +677,10 @@ html[data-theme="dark"] .product-card h3 {
     height: 300px;
   }
   .product-detail-image {
-    height: 270px !important;
+    height: auto !important;
   }
   .product-detail-image-machine {
-    height: 300px !important;
+    height: auto !important;
   }
 }
 
