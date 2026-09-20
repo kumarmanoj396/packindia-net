@@ -89,7 +89,7 @@ const suppliedProductImages: Record<string, string> = {
   "Paper Angle Edge Protector":
     "/product-images/catalog/paper-angle-edge-protector.png",
   "High-Strength Laminated Edge Board":
-    "/product-images/catalog/angle-board.png",
+    "/product-images/catalog/high-strength-laminated-edge-board.png",
   "Spiral Edge Protector": "/product-images/catalog/vertical-protection.png",
   "Paper Edge Protector Covers":
     "/product-images/catalog/vertical-protection.png",
