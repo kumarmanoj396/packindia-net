@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
   ArrowRight,
@@ -112,7 +113,13 @@ export default async function ProductDetail({
                 product.category === "Packaging Machines" ? " product-detail-image-machine" : ""
               }`}
             >
-              <img src={product.image} alt={product.name} />
+              <Image
+                src={product.image}
+                alt={product.name}
+                width={1600}
+                height={1200}
+                sizes="(max-width: 700px) 92vw, 46vw"
+              />
             </div>
           </div>
 

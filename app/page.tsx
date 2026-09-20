@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   ShieldCheck,
@@ -219,7 +220,7 @@ export default function Home() {
               ["Corrugated Box", "/product-images/catalog/corrugated-box.png"],
             ].map(([name, image]) => (
               <Link href="/gallery" className="home-gallery-item" key={name}>
-                <img src={image} alt={name} />
+                <Image src={image} alt={name} fill sizes="(max-width: 600px) 92vw, (max-width: 900px) 45vw, 31vw" />
                 <span>{name}</span>
               </Link>
             ))}

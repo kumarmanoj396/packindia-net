@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, ArrowUpRight, Check, X } from "lucide-react";
 import { useState } from "react";
 import { createPortal } from "react-dom";
@@ -14,7 +15,7 @@ export default function ProductCard({ product }: { product: Product }) {
     <article className="product-card">
       <Link href={`/products/${product.slug}`} className="product-card-image-link" aria-label={`View ${product.name}`}>
         <div className="product-art">
-          <img className="product-image" src={product.image} alt={product.name} />
+          <Image className="product-image" src={product.image} alt={product.name} fill sizes="(max-width: 600px) 92vw, (max-width: 900px) 44vw, 31vw" />
           <div className="product-hover-facts" aria-hidden="true">
             {product.features.slice(0, 2).map((feature) => <span key={feature}>{feature}</span>)}
           </div>
@@ -37,7 +38,7 @@ export default function ProductCard({ product }: { product: Product }) {
             <button className="quick-view-close" type="button" onClick={() => setIsQuickViewOpen(false)} aria-label="Close quick view">
               <X size={18} />
             </button>
-            <div className="quick-view-image"><img src={product.image} alt={product.name} /></div>
+            <div className="quick-view-image"><Image src={product.image} alt={product.name} width={720} height={540} sizes="(max-width: 700px) 86vw, 45vw" /></div>
             <div className="quick-view-content">
               <span className="eyebrow">{product.category}</span>
               <h2 id={`quick-view-${product.slug}`}>{product.name}</h2>

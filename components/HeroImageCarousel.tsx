@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const slides = [
   {
@@ -34,11 +35,14 @@ export default function HeroImageCarousel() {
   return (
     <div className="hero-visual hero-machine hero-carousel" aria-label="Pack India product showcase">
       {slides.map((slide, index) => (
-        <img
+        <Image
           key={slide.src}
           className={`hero-carousel-slide${index === activeSlide ? " is-active" : ""}`}
           src={slide.src}
           alt={slide.alt}
+          fill
+          sizes="(max-width: 700px) 92vw, 52vw"
+          priority={index === 0}
         />
       ))}
       <div className="hero-carousel-dots" aria-label="Product showcase slides">
