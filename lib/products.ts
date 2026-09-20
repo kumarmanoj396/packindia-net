@@ -79,6 +79,8 @@ const suppliedProductImages: Record<string, string> = {
     "/product-images/catalog/machines/pet-roll-dispenser.png",
   "Stretch Wrap Dispenser":
     "/product-images/catalog/machines/stretch-wrap-dispenser.png",
+  "Auto and Manual Machines":
+    "/product-images/catalog/machines/auto-and-manual-machines.png",
   "Vacuum Chamber Machine": "/product-images/catalog/machines/Vacuum Chamber Machine.png",
   "Pallet Wrapping Machine":
     "/product-images/catalog/machines/pallet-wrapping-machine.png",
