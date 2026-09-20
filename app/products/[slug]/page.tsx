@@ -11,6 +11,7 @@ import {
   Download,
 } from "lucide-react";
 import ContactCta from "../../../components/ContactCta";
+import ProductQuoteForm from "../../../components/ProductQuoteForm";
 import { products } from "../../../lib/products";
 
 const siteUrl = "https://www.packindia.net";
@@ -67,10 +68,34 @@ export default async function ProductDetail({
       value: name,
     })),
   };
+  const productFaqs = [
+    {
+      question: `Does Pack India supply ${product.name} in Bengaluru?`,
+      answer: `Pack India accepts enquiries for ${product.name} from its Hoskote, Bengaluru location. Share your requirement, quantity and delivery location for availability and quotation support.`,
+    },
+    {
+      question: `What details should I share for a ${product.name} quote?`,
+      answer: "Share the required size or specification, application, quantity and delivery city or pincode so the Pack India team can assess your requirement.",
+    },
+    {
+      question: `Can I request ${product.name} pricing on WhatsApp?`,
+      answer: "Yes. Use the quote form or WhatsApp button on this page to send your product requirement directly to the Pack India team.",
+    },
+  ];
+  const productFaqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: productFaqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  };
 
   return (
     <main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productFaqSchema) }} />
       <section className="page-hero">
         <div className="container">
           <div className="breadcrumbs">Home → Products → {product.name}</div>
@@ -117,6 +142,8 @@ export default async function ProductDetail({
                 </div>
               ))}
             </div>
+
+            <ProductQuoteForm productName={product.name} />
 
             <div
               style={{
@@ -211,9 +238,7 @@ export default async function ProductDetail({
         <div className="container product-faq-inner">
           <span className="eyebrow">PRODUCT FAQ</span>
           <h2>{product.name} — Frequently Asked Questions</h2>
-          <details open><summary>Can I request a custom size or specification?</summary><p>Yes. Pack India can discuss size, material, quantity and application requirements before providing a quotation.</p></details>
-          <details><summary>How do I get pricing and availability?</summary><p>Use the quote button above or WhatsApp the Pack India team with your required quantity and delivery location.</p></details>
-          <details><summary>Can Pack India help choose the right product?</summary><p>Yes. Share your packaging application and the team can help identify a suitable product option.</p></details>
+          {productFaqs.map((faq, index) => <details key={faq.question} open={index === 0}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}
         </div>
       </section>
 
