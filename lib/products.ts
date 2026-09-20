@@ -73,6 +73,8 @@ const suppliedProductImages: Record<string, string> = {
   "Reel Wrapping Machine": "/product-images/catalog/machines/Reel Wrapping Machine.png",
   "Water Tank Wrapping Machine": "/product-images/catalog/machines/Water Tank Wrapping Machine.png",
   "Ring Wrapping Machine": "/product-images/catalog/machines/Ring Wrapping Machine.png",
+  "Luggage Wrapping Machine":
+    "/product-images/catalog/machines/luggage-wrapping-machine.png",
   "Vacuum Chamber Machine": "/product-images/catalog/machines/Vacuum Chamber Machine.png",
   "Pallet Wrapping Machine":
     "/product-images/catalog/machines/pallet-wrapping-machine.png",
