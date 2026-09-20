@@ -86,7 +86,8 @@ const suppliedProductImages: Record<string, string> = {
     "/product-images/catalog/machines/pallet-wrapping-machine.png",
   "V-Cut Paper Edge Protector": "/product-images/catalog/angle-board-flat.png",
   "Paper Edge Protector": "/product-images/catalog/vertical-protection.png",
-  "Paper Angle Edge Protector": "/product-images/catalog/angle-board.png",
+  "Paper Angle Edge Protector":
+    "/product-images/catalog/paper-angle-edge-protector.png",
   "High-Strength Laminated Edge Board":
     "/product-images/catalog/angle-board.png",
   "Spiral Edge Protector": "/product-images/catalog/vertical-protection.png",
