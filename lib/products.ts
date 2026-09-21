@@ -17,7 +17,7 @@ const suppliedProductImages: Record<string, string> = {
   "OD Protector": "/product-images/catalog/od-protector.jpeg",
   "Vertical Protection": "/product-images/catalog/vertical-protection.png",
   "ID Protectors": "/product-images/catalog/vertical-protection.png",
-  "Self Adhesive Edge Board": "/product-images/catalog/angle-board-flat.png",
+  "Self Adhesive Edge Board": "/product-images/catalog/self-adhesive-edge-board.png",
   "Angle Board Flat": "/product-images/catalog/angle-board-flat.png",
   "Paper Tube Container": "/product-images/catalog/paper-tube-container.png",
   "Kraft Paper Tubes with Lid":
