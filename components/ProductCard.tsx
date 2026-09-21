@@ -18,6 +18,7 @@ export default function ProductCard({ product }: { product: Product }) {
           <Image className="product-image" src={product.image} alt={product.name} fill sizes="(max-width: 600px) 92vw, (max-width: 900px) 44vw, 31vw" />
           <div className="product-hover-facts" aria-hidden="true">
             {product.features.slice(0, 2).map((feature) => <span key={feature}>{feature}</span>)}
+            <b>VIEW DETAILS <ArrowUpRight size={12} /></b>
           </div>
         </div>
       </Link>
@@ -30,6 +31,9 @@ export default function ProductCard({ product }: { product: Product }) {
             VIEW PRODUCT <ArrowUpRight size={13} />
           </Link>
         </div>
+        <Link href={quoteHref} className="product-card-quote">
+          GET QUOTE <ArrowRight size={13} />
+        </Link>
       </div>
 
       {isQuickViewOpen && createPortal(

@@ -17,6 +17,7 @@ import ProductShowcaseVideo from "../components/ProductShowcaseVideo";
 import HeroImageCarousel from "../components/HeroImageCarousel";
 import SocialMediaLinks from "../components/SocialMediaLinks";
 import Reveal from "../components/Reveal";
+import PackagingTransformation from "../components/PackagingTransformation";
 import { products, type Product } from "../lib/products";
 
 const pickProducts = (names: string[]): Product[] =>
@@ -107,6 +108,8 @@ export default function Home() {
         </div>
       </section>
 
+      <LeadStrip />
+
       <section
         className="section product-section"
         style={{ paddingTop: "54px" }}
@@ -193,7 +196,7 @@ export default function Home() {
         </Reveal>
       </section>
 
-      <LeadStrip />
+      <PackagingTransformation />
       <section className="section" id="gallery">
         <Reveal className="container">
           <SectionTitle
